@@ -70,6 +70,12 @@ const link: LinkType = ({
               },
             },
           },
+          {
+            name: "icon",
+            label: "Icon",
+            type: "upload",
+            relationTo: "media",
+          },
         ],
       },
     ],

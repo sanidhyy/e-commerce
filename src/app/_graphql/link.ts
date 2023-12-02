@@ -12,6 +12,9 @@ export const LINK_FIELDS = ({
   type
   newTab
   url
+  icon {
+    url
+  }
   reference {
     relationTo
     value {
