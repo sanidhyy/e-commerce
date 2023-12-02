@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import { Jost } from "next/font/google";
 
 import { AdminBar } from "./_components/AdminBar";
 import { Footer } from "./_components/Footer";
@@ -9,6 +10,12 @@ import { InitTheme } from "./_providers/Theme/InitTheme";
 import { mergeOpenGraph } from "./_utilities/mergeOpenGraph";
 
 import "./_css/app.scss";
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-jost",
+});
 
 export default async function RootLayout({
   children,
@@ -22,12 +29,12 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body>
+      <body className={jost.variable}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error */}
           <Header />
-          {children}
+          <main className="main">{children}</main>
           {/* @ts-expect-error */}
           <Footer />
         </Providers>
