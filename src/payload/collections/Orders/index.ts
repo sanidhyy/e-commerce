@@ -1,19 +1,20 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from "payload/types";
 
-import { admins } from '../../access/admins'
-import { adminsOrLoggedIn } from '../../access/adminsOrLoggedIn'
-import { adminsOrOrderedBy } from './access/adminsOrOrderedBy'
-import { clearUserCart } from './hooks/clearUserCart'
-import { populateOrderedBy } from './hooks/populateOrderedBy'
-import { updateUserPurchases } from './hooks/updateUserPurchases'
-import { LinkToPaymentIntent } from './ui/LinkToPaymentIntent'
+import { admins } from "../../access/admins";
+import { adminsOrLoggedIn } from "../../access/adminsOrLoggedIn";
+import { adminsOrOrderedBy } from "./access/adminsOrOrderedBy";
+import { clearUserCart } from "./hooks/clearUserCart";
+import { populateOrderedBy } from "./hooks/populateOrderedBy";
+import { updateUserPurchases } from "./hooks/updateUserPurchases";
+import { LinkToPaymentIntent } from "./ui/LinkToPaymentIntent";
 
 export const Orders: CollectionConfig = {
-  slug: 'orders',
+  slug: "orders",
   admin: {
-    useAsTitle: 'createdAt',
-    defaultColumns: ['createdAt', 'orderedBy'],
-    preview: doc => `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/orders/${doc.id}`,
+    useAsTitle: "createdAt",
+    defaultColumns: ["createdAt", "orderedBy"],
+    preview: (doc) =>
+      `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/orders/${doc.id}`,
   },
   hooks: {
     afterChange: [updateUserPurchases, clearUserCart],
@@ -26,51 +27,51 @@ export const Orders: CollectionConfig = {
   },
   fields: [
     {
-      name: 'orderedBy',
-      type: 'relationship',
-      relationTo: 'users',
+      name: "orderedBy",
+      type: "relationship",
+      relationTo: "users",
       hooks: {
         beforeChange: [populateOrderedBy],
       },
     },
     {
-      name: 'stripePaymentIntentID',
-      label: 'Stripe Payment Intent ID',
-      type: 'text',
+      name: "stripePaymentIntentID",
+      label: "Stripe Payment Intent ID",
+      type: "text",
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
         components: {
           Field: LinkToPaymentIntent,
         },
       },
     },
     {
-      name: 'total',
-      type: 'number',
+      name: "total",
+      type: "number",
       required: true,
       min: 0,
     },
     {
-      name: 'items',
-      type: 'array',
+      name: "items",
+      type: "array",
       fields: [
         {
-          name: 'product',
-          type: 'relationship',
-          relationTo: 'products',
+          name: "product",
+          type: "relationship",
+          relationTo: "products",
           required: true,
         },
         {
-          name: 'price',
-          type: 'number',
+          name: "price",
+          type: "number",
           min: 0,
         },
         {
-          name: 'quantity',
-          type: 'number',
+          name: "quantity",
+          type: "number",
           min: 0,
         },
       ],
     },
   ],
-}
+};

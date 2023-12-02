@@ -1,24 +1,24 @@
-'use client'
+"use client";
 
-import React, { Fragment, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+import React, { Fragment, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
-import { Button } from '../../../_components/Button'
-import { Message } from '../../../_components/Message'
-import { useCart } from '../../../_providers/Cart'
+import { Button } from "../../../_components/Button";
+import { Message } from "../../../_components/Message";
+import { useCart } from "../../../_providers/Cart";
 
-import classes from './index.module.scss'
+import classes from "./index.module.scss";
 
 export const OrderConfirmationPage: React.FC<{}> = () => {
-  const searchParams = useSearchParams()
-  const orderID = searchParams.get('order_id')
-  const error = searchParams.get('error')
+  const searchParams = useSearchParams();
+  const orderID = searchParams.get("order_id");
+  const error = searchParams.get("error");
 
-  const { clearCart } = useCart()
+  const { clearCart } = useCart();
 
   useEffect(() => {
-    clearCart()
-  }, [clearCart])
+    clearCart();
+  }, [clearCart]);
 
   return (
     <div>
@@ -44,7 +44,11 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
             {`Your order has been confirmed. You will receive an email confirmation shortly. Your order ID is ${orderID}.`}
           </p>
           <div className={classes.actions}>
-            <Button href={`/orders/${orderID}`} label="View order" appearance="primary" />
+            <Button
+              href={`/orders/${orderID}`}
+              label="View order"
+              appearance="primary"
+            />
             <Button
               href={`${process.env.NEXT_PUBLIC_SERVER_URL}/orders`}
               label="View all orders"
@@ -54,5 +58,5 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
         </Fragment>
       )}
     </div>
-  )
-}
+  );
+};

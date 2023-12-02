@@ -5,8 +5,8 @@ width
 height
 alt
 caption
-`
+`;
 
 export const MEDIA = `media {
   ${MEDIA_FIELDS}
-}`
+}`;

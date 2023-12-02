@@ -1,14 +1,14 @@
-import type { RichTextCustomElement } from '@payloadcms/richtext-slate/dist/types'
+import type { RichTextCustomElement } from "@payloadcms/richtext-slate/dist/types";
 
-import Button from './Button'
-import Element from './Element'
-import withLabel from './plugin'
+import Button from "./Button";
+import Element from "./Element";
+import withLabel from "./plugin";
 
 const richTextLabel: RichTextCustomElement = {
-  name: 'label',
+  name: "label",
   Button,
   Element,
   plugins: [withLabel],
-}
+};
 
-export default richTextLabel
+export default richTextLabel;

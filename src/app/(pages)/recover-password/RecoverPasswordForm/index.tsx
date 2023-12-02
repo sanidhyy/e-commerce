@@ -1,50 +1,50 @@
-'use client'
+"use client";
 
-import React, { Fragment, useCallback, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import Link from 'next/link'
+import React, { Fragment, useCallback, useState } from "react";
+import { useForm } from "react-hook-form";
+import Link from "next/link";
 
-import { Button } from '../../../_components/Button'
-import { Input } from '../../../_components/Input'
-import { Message } from '../../../_components/Message'
+import { Button } from "../../../_components/Button";
+import { Input } from "../../../_components/Input";
+import { Message } from "../../../_components/Message";
 
-import classes from './index.module.scss'
+import classes from "./index.module.scss";
 
 type FormData = {
-  email: string
-}
+  email: string;
+};
 
 export const RecoverPasswordForm: React.FC = () => {
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>()
+  } = useForm<FormData>();
 
   const onSubmit = useCallback(async (data: FormData) => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/forgot-password`,
       {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(data),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      },
-    )
+      }
+    );
 
     if (response.ok) {
-      setSuccess(true)
-      setError('')
+      setSuccess(true);
+      setError("");
     } else {
       setError(
-        'There was a problem while attempting to send you a password reset email. Please try again.',
-      )
+        "There was a problem while attempting to send you a password reset email. Please try again."
+      );
     }
-  }, [])
+  }, []);
 
   return (
     <Fragment>
@@ -55,8 +55,10 @@ export const RecoverPasswordForm: React.FC = () => {
             <p>
               {`Please enter your email below. You will receive an email message with instructions on
               how to reset your password. To manage your all users, `}
-              <Link href="/admin/collections/users">login to the admin dashboard</Link>
-              {'.'}
+              <Link href="/admin/collections/users">
+                login to the admin dashboard
+              </Link>
+              {"."}
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
               <Message error={error} className={classes.message} />
@@ -81,9 +83,12 @@ export const RecoverPasswordForm: React.FC = () => {
       {success && (
         <React.Fragment>
           <h1>Request submitted</h1>
-          <p>Check your email for a link that will allow you to securely reset your password.</p>
+          <p>
+            Check your email for a link that will allow you to securely reset
+            your password.
+          </p>
         </React.Fragment>
       )}
     </Fragment>
-  )
-}
+  );
+};

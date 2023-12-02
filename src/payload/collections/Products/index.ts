@@ -1,27 +1,29 @@
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from "payload/types";
 
-import { admins } from '../../access/admins'
-import { Archive } from '../../blocks/ArchiveBlock'
-import { CallToAction } from '../../blocks/CallToAction'
-import { Content } from '../../blocks/Content'
-import { MediaBlock } from '../../blocks/MediaBlock'
-import { slugField } from '../../fields/slug'
-import { populateArchiveBlock } from '../../hooks/populateArchiveBlock'
-import { checkUserPurchases } from './access/checkUserPurchases'
-import { beforeProductChange } from './hooks/beforeChange'
-import { deleteProductFromCarts } from './hooks/deleteProductFromCarts'
-import { revalidateProduct } from './hooks/revalidateProduct'
-import { ProductSelect } from './ui/ProductSelect'
+import { admins } from "../../access/admins";
+import { Archive } from "../../blocks/ArchiveBlock";
+import { CallToAction } from "../../blocks/CallToAction";
+import { Content } from "../../blocks/Content";
+import { MediaBlock } from "../../blocks/MediaBlock";
+import { slugField } from "../../fields/slug";
+import { populateArchiveBlock } from "../../hooks/populateArchiveBlock";
+import { checkUserPurchases } from "./access/checkUserPurchases";
+import { beforeProductChange } from "./hooks/beforeChange";
+import { deleteProductFromCarts } from "./hooks/deleteProductFromCarts";
+import { revalidateProduct } from "./hooks/revalidateProduct";
+import { ProductSelect } from "./ui/ProductSelect";
 
 const Products: CollectionConfig = {
-  slug: 'products',
+  slug: "products",
   admin: {
-    useAsTitle: 'title',
-    defaultColumns: ['title', 'stripeProductID', '_status'],
-    preview: doc => {
-      return `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/api/preview?url=${encodeURIComponent(
-        `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/products/${doc.slug}`,
-      )}&secret=${process.env.PAYLOAD_PUBLIC_DRAFT_SECRET}`
+    useAsTitle: "title",
+    defaultColumns: ["title", "stripeProductID", "_status"],
+    preview: (doc) => {
+      return `${
+        process.env.PAYLOAD_PUBLIC_SERVER_URL
+      }/api/preview?url=${encodeURIComponent(
+        `${process.env.PAYLOAD_PUBLIC_SERVER_URL}/products/${doc.slug}`
+      )}&secret=${process.env.PAYLOAD_PUBLIC_DRAFT_SECRET}`;
     },
   },
   hooks: {
@@ -41,51 +43,51 @@ const Products: CollectionConfig = {
   },
   fields: [
     {
-      name: 'title',
-      type: 'text',
+      name: "title",
+      type: "text",
       required: true,
     },
     {
-      name: 'publishedOn',
-      type: 'date',
+      name: "publishedOn",
+      type: "date",
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
         date: {
-          pickerAppearance: 'dayAndTime',
+          pickerAppearance: "dayAndTime",
         },
       },
       hooks: {
         beforeChange: [
           ({ siblingData, value }) => {
-            if (siblingData._status === 'published' && !value) {
-              return new Date()
+            if (siblingData._status === "published" && !value) {
+              return new Date();
             }
-            return value
+            return value;
           },
         ],
       },
     },
     {
-      type: 'tabs',
+      type: "tabs",
       tabs: [
         {
-          label: 'Content',
+          label: "Content",
           fields: [
             {
-              name: 'layout',
-              type: 'blocks',
+              name: "layout",
+              type: "blocks",
               required: true,
               blocks: [CallToAction, Content, MediaBlock, Archive],
             },
           ],
         },
         {
-          label: 'Product Details',
+          label: "Product Details",
           fields: [
             {
-              name: 'stripeProductID',
-              label: 'Stripe Product',
-              type: 'text',
+              name: "stripeProductID",
+              label: "Stripe Product",
+              type: "text",
               admin: {
                 components: {
                   Field: ProductSelect,
@@ -93,9 +95,9 @@ const Products: CollectionConfig = {
               },
             },
             {
-              name: 'priceJSON',
-              label: 'Price JSON',
-              type: 'textarea',
+              name: "priceJSON",
+              label: "Price JSON",
+              type: "textarea",
               admin: {
                 readOnly: true,
                 hidden: true,
@@ -103,14 +105,14 @@ const Products: CollectionConfig = {
               },
             },
             {
-              name: 'enablePaywall',
-              label: 'Enable Paywall',
-              type: 'checkbox',
+              name: "enablePaywall",
+              label: "Enable Paywall",
+              type: "checkbox",
             },
             {
-              name: 'paywall',
-              label: 'Paywall',
-              type: 'blocks',
+              name: "paywall",
+              label: "Paywall",
+              type: "blocks",
               access: {
                 read: checkUserPurchases,
               },
@@ -121,39 +123,39 @@ const Products: CollectionConfig = {
       ],
     },
     {
-      name: 'categories',
-      type: 'relationship',
-      relationTo: 'categories',
+      name: "categories",
+      type: "relationship",
+      relationTo: "categories",
       hasMany: true,
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
       },
     },
     {
-      name: 'relatedProducts',
-      type: 'relationship',
-      relationTo: 'products',
+      name: "relatedProducts",
+      type: "relationship",
+      relationTo: "products",
       hasMany: true,
       filterOptions: ({ id }) => {
         return {
           id: {
             not_in: [id],
           },
-        }
+        };
       },
     },
     slugField(),
     {
-      name: 'skipSync',
-      label: 'Skip Sync',
-      type: 'checkbox',
+      name: "skipSync",
+      label: "Skip Sync",
+      type: "checkbox",
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
         readOnly: true,
         hidden: true,
       },
     },
   ],
-}
+};
 
-export default Products
+export default Products;

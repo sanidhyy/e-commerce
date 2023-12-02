@@ -1,38 +1,40 @@
-'use client'
+"use client";
 
-import React, { ElementType } from 'react'
-import Link from 'next/link'
+import React, { ElementType } from "react";
+import Link from "next/link";
 
-import classes from './index.module.scss'
+import classes from "./index.module.scss";
 
 export type Props = {
-  label?: string
-  appearance?: 'default' | 'primary' | 'secondary' | 'none'
-  el?: 'button' | 'link' | 'a'
-  onClick?: () => void
-  href?: string
-  newTab?: boolean
-  className?: string
-  type?: 'submit' | 'button'
-  disabled?: boolean
-  invert?: boolean
-}
+  label?: string;
+  appearance?: "default" | "primary" | "secondary" | "none";
+  el?: "button" | "link" | "a";
+  onClick?: () => void;
+  href?: string;
+  newTab?: boolean;
+  className?: string;
+  type?: "submit" | "button";
+  disabled?: boolean;
+  invert?: boolean;
+};
 
 export const Button: React.FC<Props> = ({
-  el: elFromProps = 'link',
+  el: elFromProps = "link",
   label,
   newTab,
   href,
   appearance,
   className: classNameFromProps,
   onClick,
-  type = 'button',
+  type = "button",
   disabled,
   invert,
 }) => {
-  let el = elFromProps
+  let el = elFromProps;
 
-  const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+  const newTabProps = newTab
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
 
   const className = [
     classes.button,
@@ -41,25 +43,30 @@ export const Button: React.FC<Props> = ({
     invert && classes[`${appearance}--invert`],
   ]
     .filter(Boolean)
-    .join(' ')
+    .join(" ");
 
   const content = (
     <div className={classes.content}>
       <span className={classes.label}>{label}</span>
     </div>
-  )
+  );
 
-  if (onClick || type === 'submit') el = 'button'
+  if (onClick || type === "submit") el = "button";
 
-  if (el === 'link') {
+  if (el === "link") {
     return (
-      <Link href={href || ''} className={className} {...newTabProps} onClick={onClick}>
+      <Link
+        href={href || ""}
+        className={className}
+        {...newTabProps}
+        onClick={onClick}
+      >
         {content}
       </Link>
-    )
+    );
   }
 
-  const Element: ElementType = el
+  const Element: ElementType = el;
 
   return (
     <Element
@@ -72,5 +79,5 @@ export const Button: React.FC<Props> = ({
     >
       {content}
     </Element>
-  )
-}
+  );
+};

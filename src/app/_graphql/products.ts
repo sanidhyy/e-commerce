@@ -1,6 +1,6 @@
-import { ARCHIVE_BLOCK, CALL_TO_ACTION, CONTENT, MEDIA_BLOCK } from './blocks'
-import { CATEGORIES } from './categories'
-import { META } from './meta'
+import { ARCHIVE_BLOCK, CALL_TO_ACTION, CONTENT, MEDIA_BLOCK } from "./blocks";
+import { CATEGORIES } from "./categories";
+import { META } from "./meta";
 
 export const PRODUCTS = `
   query Products {
@@ -10,7 +10,7 @@ export const PRODUCTS = `
       }
     }
   }
-`
+`;
 
 export const PRODUCT = `
   query Product($slug: String, $draft: Boolean) {
@@ -38,7 +38,7 @@ export const PRODUCT = `
       }
     }
   }
-`
+`;
 
 export const PRODUCT_PAYWALL = `
   query Product($slug: String, $draft: Boolean) {
@@ -53,4 +53,4 @@ export const PRODUCT_PAYWALL = `
       }
     }
   }
-`
+`;

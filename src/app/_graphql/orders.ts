@@ -1,4 +1,4 @@
-import { PRODUCT } from './products'
+import { PRODUCT } from "./products";
 
 export const ORDERS = `
   query Orders {
@@ -8,7 +8,7 @@ export const ORDERS = `
       }
     }
   }
-`
+`;
 
 export const ORDER = `
   query Order($id: String ) {
@@ -24,4 +24,4 @@ export const ORDER = `
       }
     }
   }
-`
+`;

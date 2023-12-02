@@ -1,44 +1,44 @@
-import React from 'react'
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import React from "react";
+import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
-import { Order } from '../../../payload/payload-types'
-import { Button } from '../../_components/Button'
-import { Gutter } from '../../_components/Gutter'
-import { HR } from '../../_components/HR'
-import { RenderParams } from '../../_components/RenderParams'
-import { formatDateTime } from '../../_utilities/formatDateTime'
-import { getMeUser } from '../../_utilities/getMeUser'
-import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
+import { Order } from "../../../payload/payload-types";
+import { Button } from "../../_components/Button";
+import { Gutter } from "../../_components/Gutter";
+import { HR } from "../../_components/HR";
+import { RenderParams } from "../../_components/RenderParams";
+import { formatDateTime } from "../../_utilities/formatDateTime";
+import { getMeUser } from "../../_utilities/getMeUser";
+import { mergeOpenGraph } from "../../_utilities/mergeOpenGraph";
 
-import classes from './index.module.scss'
+import classes from "./index.module.scss";
 
 export default async function Orders() {
   const { token } = await getMeUser({
     nullUserRedirect: `/login?error=${encodeURIComponent(
-      'You must be logged in to view your orders.',
-    )}&redirect=${encodeURIComponent('/orders')}`,
-  })
+      "You must be logged in to view your orders."
+    )}&redirect=${encodeURIComponent("/orders")}`,
+  });
 
-  let orders: Order[] | null = null
+  let orders: Order[] | null = null;
 
   try {
     orders = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders`, {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `JWT ${token}`,
       },
-      cache: 'no-store',
+      cache: "no-store",
     })
-      ?.then(async res => {
-        if (!res.ok) notFound()
-        const json = await res.json()
-        if ('error' in json && json.error) notFound()
-        if ('errors' in json && json.errors) notFound()
-        return json
+      ?.then(async (res) => {
+        if (!res.ok) notFound();
+        const json = await res.json();
+        if ("error" in json && json.error) notFound();
+        if ("errors" in json && json.errors) notFound();
+        return json;
       })
-      ?.then(json => json.docs)
+      ?.then((json) => json.docs);
   } catch (error) {
     // when deploying this template on Payload Cloud, this page needs to build before the APIs are live
     // so swallow the error here and simply render the page with fallback data where necessary
@@ -63,10 +63,10 @@ export default async function Orders() {
                   <div className={classes.itemMeta}>
                     <p>{`Ordered On: ${formatDateTime(order.createdAt)}`}</p>
                     <p>
-                      {'Total: '}
-                      {new Intl.NumberFormat('en-US', {
-                        style: 'currency',
-                        currency: 'usd',
+                      {"Total: "}
+                      {new Intl.NumberFormat("en-US", {
+                        style: "currency",
+                        currency: "usd",
                       }).format(order.total / 100)}
                     </p>
                   </div>
@@ -86,14 +86,14 @@ export default async function Orders() {
       <HR />
       <Button href="/account" appearance="primary" label="Go to account" />
     </Gutter>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Orders',
-  description: 'Your orders.',
+  title: "Orders",
+  description: "Your orders.",
   openGraph: mergeOpenGraph({
-    title: 'Orders',
-    url: '/orders',
+    title: "Orders",
+    url: "/orders",
   }),
-}
+};

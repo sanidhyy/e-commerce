@@ -1,21 +1,21 @@
-import type { Product } from '../payload-types'
+import type { Product } from "../payload-types";
 
 export const product1: Partial<Product> = {
-  title: 'Cotton T-Shirt',
-  stripeProductID: '',
-  slug: 'cotton-t',
-  _status: 'published',
+  title: "Cotton T-Shirt",
+  stripeProductID: "",
+  slug: "cotton-t",
+  _status: "published",
   meta: {
-    title: 'Cotton T-Shirt',
-    description: 'Make a one-time purchase for this physical product.',
-    image: '{{PRODUCT_IMAGE}}',
+    title: "Cotton T-Shirt",
+    description: "Make a one-time purchase for this physical product.",
+    image: "{{PRODUCT_IMAGE}}",
   },
   layout: [
     {
-      blockType: 'content',
+      blockType: "content",
       columns: [
         {
-          size: 'twoThirds',
+          size: "twoThirds",
           richText: [
             {
               children: [
@@ -27,12 +27,12 @@ export const product1: Partial<Product> = {
           ],
           link: {
             reference: null,
-            url: '',
-            label: '',
+            url: "",
+            label: "",
           },
         },
       ],
     },
   ],
   relatedProducts: [], // this is populated by the seed script
-}
+};

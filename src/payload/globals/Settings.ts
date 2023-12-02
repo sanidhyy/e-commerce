@@ -1,22 +1,22 @@
-import type { GlobalConfig } from 'payload/types'
+import type { GlobalConfig } from "payload/types";
 
 export const Settings: GlobalConfig = {
-  slug: 'settings',
+  slug: "settings",
   typescript: {
-    interface: 'Settings',
+    interface: "Settings",
   },
   graphQL: {
-    name: 'Settings',
+    name: "Settings",
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: 'productsPage',
-      type: 'relationship',
-      relationTo: 'pages',
-      label: 'Products page',
+      name: "productsPage",
+      type: "relationship",
+      relationTo: "pages",
+      label: "Products page",
     },
   ],
-}
+};

@@ -1,4 +1,4 @@
-import { CART } from './cart'
+import { CART } from "./cart";
 
 export const ME_QUERY = `query {
   meUser {
@@ -11,4 +11,4 @@ export const ME_QUERY = `query {
     }
     exp
   }
-}`
+}`;

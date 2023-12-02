@@ -1,50 +1,50 @@
-import type { Page } from '../payload-types'
+import type { Page } from "../payload-types";
 
 export const staticCart: Page = {
-  id: '',
-  title: 'Cart',
-  slug: 'cart',
-  createdAt: '',
-  updatedAt: '',
-  _status: 'published',
+  id: "",
+  title: "Cart",
+  slug: "cart",
+  createdAt: "",
+  updatedAt: "",
+  _status: "published",
   meta: {
-    title: 'Cart',
+    title: "Cart",
     description:
-      'Your cart will sync to your user profile so you can continue shopping from any device.',
+      "Your cart will sync to your user profile so you can continue shopping from any device.",
   },
   hero: {
-    type: 'lowImpact',
+    type: "lowImpact",
     links: [],
-    media: '',
+    media: "",
     richText: [
       {
-        type: 'h1',
+        type: "h1",
         children: [
           {
-            text: 'Cart',
+            text: "Cart",
           },
         ],
       },
       {
-        type: 'p',
+        type: "p",
         children: [
           {
-            text: 'This cart saves to local storage so you can continue shopping later. Once you authenticate with Payload, your cart will sync to your user profile so you can continue shopping from any device. ',
+            text: "This cart saves to local storage so you can continue shopping later. Once you authenticate with Payload, your cart will sync to your user profile so you can continue shopping from any device. ",
           },
           {
-            text: 'Your database does not have a cart page yet.',
+            text: "Your database does not have a cart page yet.",
             bold: true,
           },
           {
             text: " You are currently seeing a demo page. To manage this page's content, ",
           },
           {
-            type: 'link',
-            linkType: 'custom',
-            url: '/admin',
+            type: "link",
+            linkType: "custom",
+            url: "/admin",
             children: [
               {
-                text: 'log in to the admin dashboard',
+                text: "log in to the admin dashboard",
               },
             ],
           },
@@ -52,7 +52,7 @@ export const staticCart: Page = {
             text: ' and click "seed your database". If you have already seeded your database, ',
           },
           {
-            text: 'you may need to hard refresh this page to clear the cached request.',
+            text: "you may need to hard refresh this page to clear the cached request.",
             bold: true,
           },
         ],
@@ -65,23 +65,23 @@ export const staticCart: Page = {
         {
           children: [
             {
-              text: 'Create a cart page',
+              text: "Create a cart page",
             },
           ],
-          type: 'h4',
+          type: "h4",
         },
         {
           children: [
             {
-              text: 'Your database is does not have a cart page yet. To seed your database with a cart page, ',
+              text: "Your database is does not have a cart page yet. To seed your database with a cart page, ",
             },
             {
-              type: 'link',
-              linkType: 'custom',
-              url: '/admin',
+              type: "link",
+              linkType: "custom",
+              url: "/admin",
               children: [
                 {
-                  text: 'log in to the admin dashboard',
+                  text: "log in to the admin dashboard",
                 },
               ],
             },
@@ -94,16 +94,16 @@ export const staticCart: Page = {
       links: [
         {
           link: {
-            type: 'custom',
-            url: '/admin',
-            label: 'Go to dashboard',
-            appearance: 'primary',
+            type: "custom",
+            url: "/admin",
+            label: "Go to dashboard",
+            appearance: "primary",
             reference: null,
           },
         },
       ],
-      blockName: 'CTA',
-      blockType: 'cta',
+      blockName: "CTA",
+      blockType: "cta",
     },
   ],
-}
+};

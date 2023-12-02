@@ -1,6 +1,6 @@
-import { Button } from '../_components/Button'
-import { Gutter } from '../_components/Gutter'
-import { VerticalPadding } from '../_components/VerticalPadding'
+import { Button } from "../_components/Button";
+import { Gutter } from "../_components/Gutter";
+import { VerticalPadding } from "../_components/VerticalPadding";
 
 export default function NotFound() {
   return (
@@ -11,5 +11,5 @@ export default function NotFound() {
         <Button href="/" label="Go Home" appearance="primary" />
       </VerticalPadding>
     </Gutter>
-  )
+  );
 }

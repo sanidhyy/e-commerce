@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import classes from './index.module.scss'
+import classes from "./index.module.scss";
 
 export const HR: React.FC<{
-  className?: string
-}> = props => {
-  const { className } = props
+  className?: string;
+}> = (props) => {
+  const { className } = props;
 
-  return <hr className={[className, classes.hr].filter(Boolean).join(' ')} />
-}
+  return <hr className={[className, classes.hr].filter(Boolean).join(" ")} />;
+};

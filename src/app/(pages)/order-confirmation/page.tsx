@@ -1,11 +1,11 @@
-import React, { Suspense } from 'react'
-import { Metadata } from 'next'
+import React, { Suspense } from "react";
+import { Metadata } from "next";
 
-import { Gutter } from '../../_components/Gutter'
-import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
-import { OrderConfirmationPage } from './OrderConfirmationPage'
+import { Gutter } from "../../_components/Gutter";
+import { mergeOpenGraph } from "../../_utilities/mergeOpenGraph";
+import { OrderConfirmationPage } from "./OrderConfirmationPage";
 
-import classes from './index.module.scss'
+import classes from "./index.module.scss";
 
 export default async function OrderConfirmation() {
   return (
@@ -14,14 +14,14 @@ export default async function OrderConfirmation() {
         <OrderConfirmationPage />
       </Suspense>
     </Gutter>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Order Confirmation',
-  description: 'Your order has been confirmed.',
+  title: "Order Confirmation",
+  description: "Your order has been confirmed.",
   openGraph: mergeOpenGraph({
-    title: 'Order Confirmation',
-    url: '/order-confirmation',
+    title: "Order Confirmation",
+    url: "/order-confirmation",
   }),
-}
+};

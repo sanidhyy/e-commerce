@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Banner } from 'payload/components'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Banner } from "payload/components";
 
-import { SeedButton } from './SeedButton'
+import { SeedButton } from "./SeedButton";
 
-import './index.scss'
+import "./index.scss";
 
-const baseClass = 'before-dashboard'
+const baseClass = "before-dashboard";
 
 const BeforeDashboard: React.FC = () => {
   return (
@@ -18,43 +18,49 @@ const BeforeDashboard: React.FC = () => {
       <ul className={`${baseClass}__instructions`}>
         <li>
           <SeedButton />
-          {' with a few products and pages to jump-start your new project, then '}
+          {
+            " with a few products and pages to jump-start your new project, then "
+          }
           <a href="/">visit your website</a>
-          {' to see the results.'}
+          {" to see the results."}
         </li>
         <li>
-          {'Head over to '}
+          {"Head over to "}
           <a
             href="https://dashboard.stripe.com/test/apikeys"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {'Stripe to obtain your API Keys'}
+            {"Stripe to obtain your API Keys"}
           </a>
           {
-            '. Create a new account if needed, then copy them into your environment variables and restart your server. See the '
+            ". Create a new account if needed, then copy them into your environment variables and restart your server. See the "
           }
           <a
             href="https://github.com/payloadcms/payload/blob/main/templates/ecommerce/README.md#stripe"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {'README'}
+            {"README"}
           </a>
-          {' for more details.'}
+          {" for more details."}
         </li>
         <li>
-          <Link to="/admin/collections/products">Link each of your products</Link>
-          {' to Stripe by selecting the corresponding product using the dropdown under '}
+          <Link to="/admin/collections/products">
+            Link each of your products
+          </Link>
+          {
+            " to Stripe by selecting the corresponding product using the dropdown under "
+          }
           <i>Product Details</i>.
         </li>
         <li>
-          If you created this repo using Payload Cloud, head over to GitHub and clone it to your
-          local machine. It will be under the <i>GitHub Scope</i> that you selected when creating
-          this project.
+          If you created this repo using Payload Cloud, head over to GitHub and
+          clone it to your local machine. It will be under the{" "}
+          <i>GitHub Scope</i> that you selected when creating this project.
         </li>
         <li>
-          {'Modify your '}
+          {"Modify your "}
           <a
             href="https://payloadcms.com/docs/configuration/collections"
             target="_blank"
@@ -62,7 +68,7 @@ const BeforeDashboard: React.FC = () => {
           >
             collections
           </a>
-          {' and add more '}
+          {" and add more "}
           <a
             href="https://payloadcms.com/docs/fields/overview"
             target="_blank"
@@ -70,7 +76,9 @@ const BeforeDashboard: React.FC = () => {
           >
             fields
           </a>
-          {' as needed. If you are new to Payload, we also recommend you check out the '}
+          {
+            " as needed. If you are new to Payload, we also recommend you check out the "
+          }
           <a
             href="https://payloadcms.com/docs/getting-started/what-is-payload"
             target="_blank"
@@ -78,23 +86,27 @@ const BeforeDashboard: React.FC = () => {
           >
             Getting Started
           </a>
-          {' docs.'}
+          {" docs."}
         </li>
         <li>
-          Commit and push your changes to the repository to trigger a redeployment of your project.
+          Commit and push your changes to the repository to trigger a
+          redeployment of your project.
         </li>
       </ul>
-      {'Pro Tip: This block is a '}
+      {"Pro Tip: This block is a "}
       <a
-        href={'https://payloadcms.com/docs/admin/components#base-component-overrides'}
+        href={
+          "https://payloadcms.com/docs/admin/components#base-component-overrides"
+        }
         target="_blank"
         rel="noopener noreferrer"
       >
         custom component
       </a>
-      , you can remove it at any time by updating your <strong>payload.config</strong>.
+      , you can remove it at any time by updating your{" "}
+      <strong>payload.config</strong>.
     </div>
-  )
-}
+  );
+};
 
-export default BeforeDashboard
+export default BeforeDashboard;

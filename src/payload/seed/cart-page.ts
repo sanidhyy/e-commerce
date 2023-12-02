@@ -1,40 +1,40 @@
-import type { Page } from '../payload-types'
+import type { Page } from "../payload-types";
 
 export const cartPage: Partial<Page> = {
-  title: 'Cart',
-  slug: 'cart',
-  _status: 'published',
+  title: "Cart",
+  slug: "cart",
+  _status: "published",
   meta: {
-    title: 'Cart',
+    title: "Cart",
     description:
-      'Your cart will sync to your user profile so you can continue shopping from any device.',
+      "Your cart will sync to your user profile so you can continue shopping from any device.",
   },
   hero: {
-    type: 'lowImpact',
+    type: "lowImpact",
     links: [],
-    media: '',
+    media: "",
     richText: [
       {
-        type: 'h1',
+        type: "h1",
         children: [
           {
-            text: 'Cart',
+            text: "Cart",
           },
         ],
       },
       {
-        type: 'p',
+        type: "p",
         children: [
           {
-            text: 'This cart saves to local storage so you can continue shopping later. Once you authenticate with Payload, your cart will sync to your user profile so you can continue shopping from any device. This hero and the content below the cart are completely dynamic and ',
+            text: "This cart saves to local storage so you can continue shopping later. Once you authenticate with Payload, your cart will sync to your user profile so you can continue shopping from any device. This hero and the content below the cart are completely dynamic and ",
           },
           {
-            type: 'link',
-            linkType: 'custom',
-            url: '/admin',
+            type: "link",
+            linkType: "custom",
+            url: "/admin",
             children: [
               {
-                text: 'configured in the admin dashboard',
+                text: "configured in the admin dashboard",
               },
             ],
           },
@@ -44,21 +44,21 @@ export const cartPage: Partial<Page> = {
   },
   layout: [
     {
-      blockType: 'content',
+      blockType: "content",
       columns: [
         {
-          size: 'twoThirds',
+          size: "twoThirds",
           link: {
-            type: 'reference',
-            url: '',
+            type: "reference",
+            url: "",
             reference: null,
-            label: '',
+            label: "",
           },
           richText: [
             {
               children: [
                 {
-                  text: 'This is a custom layout building block configurable in the CMS—this can be anything you want. Related or suggested products, a blog post, video, etc.',
+                  text: "This is a custom layout building block configurable in the CMS—this can be anything you want. Related or suggested products, a blog post, video, etc.",
                 },
               ],
             },
@@ -71,28 +71,28 @@ export const cartPage: Partial<Page> = {
         {
           children: [
             {
-              text: 'Continue shopping',
+              text: "Continue shopping",
             },
           ],
-          type: 'h4',
+          type: "h4",
         },
         {
           children: [
             {
-              text: 'This is a custom layout building block ',
+              text: "This is a custom layout building block ",
             },
             {
-              type: 'link',
-              linkType: 'custom',
-              url: '/admin',
+              type: "link",
+              linkType: "custom",
+              url: "/admin",
               children: [
                 {
-                  text: 'configured in the admin dashboard',
+                  text: "configured in the admin dashboard",
                 },
               ],
             },
             {
-              text: '.',
+              text: ".",
             },
           ],
         },
@@ -100,19 +100,19 @@ export const cartPage: Partial<Page> = {
       links: [
         {
           link: {
-            type: 'reference',
-            url: '',
+            type: "reference",
+            url: "",
             reference: {
-              relationTo: 'pages',
-              value: '{{PRODUCTS_PAGE_ID}}',
+              relationTo: "pages",
+              value: "{{PRODUCTS_PAGE_ID}}",
             },
-            label: 'Continue shopping',
-            appearance: 'primary',
+            label: "Continue shopping",
+            appearance: "primary",
           },
         },
       ],
-      blockName: 'CTA',
-      blockType: 'cta',
+      blockName: "CTA",
+      blockType: "cta",
     },
   ],
-}
+};

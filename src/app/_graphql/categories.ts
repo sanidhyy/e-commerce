@@ -5,4 +5,4 @@ export const CATEGORIES = `categories {
     id
     label
   }
-}`
+}`;

@@ -1,30 +1,30 @@
-import React from 'react'
+import React from "react";
 
-import classes from './index.module.scss'
+import classes from "./index.module.scss";
 
 const defaultLabels = {
-  singular: 'Doc',
-  plural: 'Docs',
-}
+  singular: "Doc",
+  plural: "Docs",
+};
 
 const defaultCollectionLabels = {
   products: {
-    singular: 'Product',
-    plural: 'Products',
+    singular: "Product",
+    plural: "Products",
   },
-}
+};
 
 export const PageRange: React.FC<{
-  className?: string
-  totalDocs?: number
-  currentPage?: number
-  collection?: string
-  limit?: number
+  className?: string;
+  totalDocs?: number;
+  currentPage?: number;
+  collection?: string;
+  limit?: number;
   collectionLabels?: {
-    singular?: string
-    plural?: string
-  }
-}> = props => {
+    singular?: string;
+    plural?: string;
+  };
+}> = (props) => {
   const {
     className,
     totalDocs,
@@ -32,21 +32,27 @@ export const PageRange: React.FC<{
     collection,
     limit,
     collectionLabels: collectionLabelsFromProps,
-  } = props
+  } = props;
 
-  const indexStart = (currentPage ? currentPage - 1 : 1) * (limit || 1) + 1
-  let indexEnd = (currentPage || 1) * (limit || 1)
-  if (totalDocs && indexEnd > totalDocs) indexEnd = totalDocs
+  const indexStart = (currentPage ? currentPage - 1 : 1) * (limit || 1) + 1;
+  let indexEnd = (currentPage || 1) * (limit || 1);
+  if (totalDocs && indexEnd > totalDocs) indexEnd = totalDocs;
 
   const { singular, plural } =
-    collectionLabelsFromProps || defaultCollectionLabels[collection || ''] || defaultLabels || {}
+    collectionLabelsFromProps ||
+    defaultCollectionLabels[collection || ""] ||
+    defaultLabels ||
+    {};
 
   return (
-    <div className={[className, classes.pageRange].filter(Boolean).join(' ')}>
-      {(typeof totalDocs === 'undefined' || totalDocs === 0) && 'Search produced no results.'}
-      {typeof totalDocs !== 'undefined' &&
+    <div className={[className, classes.pageRange].filter(Boolean).join(" ")}>
+      {(typeof totalDocs === "undefined" || totalDocs === 0) &&
+        "Search produced no results."}
+      {typeof totalDocs !== "undefined" &&
         totalDocs > 0 &&
-        `Showing ${indexStart} - ${indexEnd} of ${totalDocs} ${totalDocs > 1 ? plural : singular}`}
+        `Showing ${indexStart} - ${indexEnd} of ${totalDocs} ${
+          totalDocs > 1 ? plural : singular
+        }`}
     </div>
-  )
-}
+  );
+};

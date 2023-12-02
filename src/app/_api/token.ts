@@ -1,1 +1,1 @@
-export const payloadToken = 'payload-token'
+export const payloadToken = "payload-token";

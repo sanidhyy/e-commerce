@@ -1,4 +1,4 @@
-@use '../../_css/common.scss' as *;
+@use "../../_css/common.scss" as *;
 
 .hero {
   padding-top: calc(var(--base) * 3);
@@ -12,13 +12,17 @@
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 100vw;
     left: calc(var(--gutter-h) * -1);
     height: 200px;
-    background: linear-gradient(to bottom, var(--theme-elevation-100), transparent);
+    background: linear-gradient(
+      to bottom,
+      var(--theme-elevation-100),
+      transparent
+    );
     top: calc(100% + (var(--base) * 2));
     right: 0;
 
