@@ -1058,11 +1058,170 @@ enum Archive_relationTo {
 
 type Category {
   id: String
-  title: String
+  title: String!
+  media(where: Category_Media_where): Media
   parent: Category
   breadcrumbs: [Category_Breadcrumbs!]
   updatedAt: DateTime
   createdAt: DateTime
+}
+
+input Category_Media_where {
+  alt: Category_Media_alt_operator
+  caption: Category_Media_caption_operator
+  updatedAt: Category_Media_updatedAt_operator
+  createdAt: Category_Media_createdAt_operator
+  url: Category_Media_url_operator
+  filename: Category_Media_filename_operator
+  mimeType: Category_Media_mimeType_operator
+  filesize: Category_Media_filesize_operator
+  width: Category_Media_width_operator
+  height: Category_Media_height_operator
+  id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
+}
+
+input Category_Media_alt_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input Category_Media_caption_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+  exists: Boolean
+}
+
+input Category_Media_updatedAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Category_Media_createdAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Category_Media_url_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_filename_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_mimeType_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_filesize_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Media_width_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Media_height_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Media_id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Media_where_and {
+  alt: Category_Media_alt_operator
+  caption: Category_Media_caption_operator
+  updatedAt: Category_Media_updatedAt_operator
+  createdAt: Category_Media_createdAt_operator
+  url: Category_Media_url_operator
+  filename: Category_Media_filename_operator
+  mimeType: Category_Media_mimeType_operator
+  filesize: Category_Media_filesize_operator
+  width: Category_Media_width_operator
+  height: Category_Media_height_operator
+  id: Category_Media_id_operator
+}
+
+input Category_Media_where_or {
+  alt: Category_Media_alt_operator
+  caption: Category_Media_caption_operator
+  updatedAt: Category_Media_updatedAt_operator
+  createdAt: Category_Media_createdAt_operator
+  url: Category_Media_url_operator
+  filename: Category_Media_filename_operator
+  mimeType: Category_Media_mimeType_operator
+  filesize: Category_Media_filesize_operator
+  width: Category_Media_width_operator
+  height: Category_Media_height_operator
+  id: Category_Media_id_operator
 }
 
 type Category_Breadcrumbs {
@@ -5539,6 +5698,7 @@ type Categories {
 
 input Category_where {
   title: Category_title_operator
+  media: Category_media_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5559,6 +5719,11 @@ input Category_title_operator {
   in: [String]
   not_in: [String]
   all: [String]
+}
+
+input Category_media_operator {
+  equals: String
+  not_equals: String
   exists: Boolean
 }
 
@@ -5648,6 +5813,7 @@ input Category_id_operator {
 
 input Category_where_and {
   title: Category_title_operator
+  media: Category_media_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5660,6 +5826,7 @@ input Category_where_and {
 
 input Category_where_or {
   title: Category_title_operator
+  media: Category_media_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5680,6 +5847,7 @@ type categoriesDocAccess {
 
 type CategoriesDocAccessFields {
   title: CategoriesDocAccessFields_title
+  media: CategoriesDocAccessFields_media
   parent: CategoriesDocAccessFields_parent
   breadcrumbs: CategoriesDocAccessFields_breadcrumbs
   updatedAt: CategoriesDocAccessFields_updatedAt
@@ -5706,6 +5874,29 @@ type CategoriesDocAccessFields_title_Update {
 }
 
 type CategoriesDocAccessFields_title_Delete {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media {
+  create: CategoriesDocAccessFields_media_Create
+  read: CategoriesDocAccessFields_media_Read
+  update: CategoriesDocAccessFields_media_Update
+  delete: CategoriesDocAccessFields_media_Delete
+}
+
+type CategoriesDocAccessFields_media_Create {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media_Read {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media_Update {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_media_Delete {
   permission: Boolean!
 }
 
@@ -10012,6 +10203,7 @@ type categoriesAccess {
 
 type CategoriesFields {
   title: CategoriesFields_title
+  media: CategoriesFields_media
   parent: CategoriesFields_parent
   breadcrumbs: CategoriesFields_breadcrumbs
   updatedAt: CategoriesFields_updatedAt
@@ -10038,6 +10230,29 @@ type CategoriesFields_title_Update {
 }
 
 type CategoriesFields_title_Delete {
+  permission: Boolean!
+}
+
+type CategoriesFields_media {
+  create: CategoriesFields_media_Create
+  read: CategoriesFields_media_Read
+  update: CategoriesFields_media_Update
+  delete: CategoriesFields_media_Delete
+}
+
+type CategoriesFields_media_Create {
+  permission: Boolean!
+}
+
+type CategoriesFields_media_Read {
+  permission: Boolean!
+}
+
+type CategoriesFields_media_Update {
+  permission: Boolean!
+}
+
+type CategoriesFields_media_Delete {
   permission: Boolean!
 }
 
@@ -11977,7 +12192,8 @@ input mutationMediaUpdateInput {
 }
 
 input mutationCategoryInput {
-  title: String
+  title: String!
+  media: String
   parent: String
   breadcrumbs: [mutationCategory_BreadcrumbsInput]
   updatedAt: String
@@ -11993,6 +12209,7 @@ input mutationCategory_BreadcrumbsInput {
 
 input mutationCategoryUpdateInput {
   title: String
+  media: String
   parent: String
   breadcrumbs: [mutationCategoryUpdate_BreadcrumbsInput]
   updatedAt: String

@@ -1,6 +1,7 @@
 import type { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 
 import type { Config } from "../../payload/payload-types";
+import { CATEGORIES } from "../_graphql/categories";
 import { ORDERS } from "../_graphql/orders";
 import { PAGES } from "../_graphql/pages";
 import { PRODUCTS } from "../_graphql/products";
@@ -19,6 +20,10 @@ const queryMap = {
   orders: {
     query: ORDERS,
     key: "Orders",
+  },
+  categories: {
+    query: CATEGORIES,
+    key: "Categories",
   },
 };
 
