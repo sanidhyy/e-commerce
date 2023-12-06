@@ -1,6 +1,7 @@
 build
 dist
 /media
+/tmp
 node_modules
 .DS_Store
 .env
