@@ -159,39 +159,39 @@ export const CollectionArchive: React.FC<Props> = (props) => {
         .join(" ")}
     >
       <div ref={scrollRef} className={classes.scrollRef} />
-      {!isLoading && error && <Gutter>{error}</Gutter>}
+      {!isLoading && error && <div>{error}</div>}
       <Fragment>
         {showPageRange !== false && (
-          <Gutter>
-            <div className={classes.pageRange}>
-              <PageRange
-                totalDocs={results.totalDocs}
-                currentPage={results.page}
-                collection={relationTo}
-                limit={limit}
-              />
-            </div>
-          </Gutter>
-        )}
-        <Gutter>
-          <div className={classes.grid}>
-            {results.docs?.map((result, index) => {
-              return (
-                <div key={index} className={classes.column}>
-                  <Card relationTo="products" doc={result} showCategories />
-                </div>
-              );
-            })}
-          </div>
-          {results.totalPages > 1 && (
-            <Pagination
-              className={classes.pagination}
-              page={results.page}
-              totalPages={results.totalPages}
-              onClick={setPage}
+          <div className={classes.pageRange}>
+            <PageRange
+              totalDocs={results.totalDocs}
+              currentPage={results.page}
+              collection={relationTo}
+              limit={limit}
             />
-          )}
-        </Gutter>
+          </div>
+        )}
+        <div className={classes.grid}>
+          {results.docs?.map((result, index) => {
+            return (
+              <Card
+                key={index}
+                relationTo="products"
+                doc={result}
+                showCategories
+              />
+            );
+          })}
+        </div>
+
+        {results.totalPages > 1 && (
+          <Pagination
+            className={classes.pagination}
+            page={results.page}
+            totalPages={results.totalPages}
+            onClick={setPage}
+          />
+        )}
       </Fragment>
     </div>
   );
