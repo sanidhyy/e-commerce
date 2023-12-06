@@ -45,12 +45,12 @@ export const OrderConfirmationPage: React.FC<{}> = () => {
           </p>
           <div className={classes.actions}>
             <Button
-              href={`/orders/${orderID}`}
+              href={`/account/orders/${orderID}`}
               label="View order"
               appearance="primary"
             />
             <Button
-              href={`${process.env.NEXT_PUBLIC_SERVER_URL}/orders`}
+              href={`${process.env.NEXT_PUBLIC_SERVER_URL}/account/orders`}
               label="View all orders"
               appearance="secondary"
             />
