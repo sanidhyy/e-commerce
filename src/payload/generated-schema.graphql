@@ -1,91 +1,33 @@
 type Query {
   Page(id: String!, draft: Boolean): Page
-  Pages(
-    draft: Boolean
-    where: Page_where
-    limit: Int
-    page: Int
-    sort: String
-  ): Pages
+  Pages(draft: Boolean, where: Page_where, limit: Int, page: Int, sort: String): Pages
   docAccessPage(id: String!): pagesDocAccess
   versionPage(id: String): PageVersion
-  versionsPages(
-    where: versionsPage_where
-    limit: Int
-    page: Int
-    sort: String
-  ): versionsPages
+  versionsPages(where: versionsPage_where, limit: Int, page: Int, sort: String): versionsPages
   Product(id: String!, draft: Boolean): Product
-  Products(
-    draft: Boolean
-    where: Product_where
-    limit: Int
-    page: Int
-    sort: String
-  ): Products
+  Products(draft: Boolean, where: Product_where, limit: Int, page: Int, sort: String): Products
   docAccessProduct(id: String!): productsDocAccess
   versionProduct(id: String): ProductVersion
-  versionsProducts(
-    where: versionsProduct_where
-    limit: Int
-    page: Int
-    sort: String
-  ): versionsProducts
+  versionsProducts(where: versionsProduct_where, limit: Int, page: Int, sort: String): versionsProducts
   Order(id: String!, draft: Boolean): Order
-  Orders(
-    draft: Boolean
-    where: Order_where
-    limit: Int
-    page: Int
-    sort: String
-  ): Orders
+  Orders(draft: Boolean, where: Order_where, limit: Int, page: Int, sort: String): Orders
   docAccessOrder(id: String!): ordersDocAccess
   Media(id: String!, draft: Boolean): Media
-  allMedia(
-    draft: Boolean
-    where: Media_where
-    limit: Int
-    page: Int
-    sort: String
-  ): allMedia
+  allMedia(draft: Boolean, where: Media_where, limit: Int, page: Int, sort: String): allMedia
   docAccessMedia(id: String!): mediaDocAccess
   Category(id: String!, draft: Boolean): Category
-  Categories(
-    draft: Boolean
-    where: Category_where
-    limit: Int
-    page: Int
-    sort: String
-  ): Categories
+  Categories(draft: Boolean, where: Category_where, limit: Int, page: Int, sort: String): Categories
   docAccessCategory(id: String!): categoriesDocAccess
   User(id: String!, draft: Boolean): User
-  Users(
-    draft: Boolean
-    where: User_where
-    limit: Int
-    page: Int
-    sort: String
-  ): Users
+  Users(draft: Boolean, where: User_where, limit: Int, page: Int, sort: String): Users
   docAccessUser(id: String!): usersDocAccess
   meUser: usersMe
   initializedUser: Boolean
   Redirect(id: String!, draft: Boolean): Redirect
-  Redirects(
-    draft: Boolean
-    where: Redirect_where
-    limit: Int
-    page: Int
-    sort: String
-  ): Redirects
+  Redirects(draft: Boolean, where: Redirect_where, limit: Int, page: Int, sort: String): Redirects
   docAccessRedirect(id: String!): redirectsDocAccess
   PayloadPreference(id: String!, draft: Boolean): PayloadPreference
-  PayloadPreferences(
-    draft: Boolean
-    where: PayloadPreference_where
-    limit: Int
-    page: Int
-    sort: String
-  ): PayloadPreferences
+  PayloadPreferences(draft: Boolean, where: PayloadPreference_where, limit: Int, page: Int, sort: String): PayloadPreferences
   docAccessPayloadPreference(id: String!): payload_preferencesDocAccess
   Settings(draft: Boolean): Settings
   docAccessSettings: settingsDocAccess
@@ -310,6 +252,8 @@ input Page_Hero_Links_Link_Icon_where_and {
   width: Page_Hero_Links_Link_Icon_width_operator
   height: Page_Hero_Links_Link_Icon_height_operator
   id: Page_Hero_Links_Link_Icon_id_operator
+  AND: [Page_Hero_Links_Link_Icon_where_and]
+  OR: [Page_Hero_Links_Link_Icon_where_or]
 }
 
 input Page_Hero_Links_Link_Icon_where_or {
@@ -324,6 +268,8 @@ input Page_Hero_Links_Link_Icon_where_or {
   width: Page_Hero_Links_Link_Icon_width_operator
   height: Page_Hero_Links_Link_Icon_height_operator
   id: Page_Hero_Links_Link_Icon_id_operator
+  AND: [Page_Hero_Links_Link_Icon_where_and]
+  OR: [Page_Hero_Links_Link_Icon_where_or]
 }
 
 type Page_Hero_Links_Link_Reference_Relationship {
@@ -485,6 +431,8 @@ input Page_Hero_Media_where_and {
   width: Page_Hero_Media_width_operator
   height: Page_Hero_Media_height_operator
   id: Page_Hero_Media_id_operator
+  AND: [Page_Hero_Media_where_and]
+  OR: [Page_Hero_Media_where_or]
 }
 
 input Page_Hero_Media_where_or {
@@ -499,6 +447,8 @@ input Page_Hero_Media_where_or {
   width: Page_Hero_Media_width_operator
   height: Page_Hero_Media_height_operator
   id: Page_Hero_Media_id_operator
+  AND: [Page_Hero_Media_where_and]
+  OR: [Page_Hero_Media_where_or]
 }
 
 union Page_Layout = Cta | Content | MediaBlock | Archive
@@ -674,6 +624,8 @@ input Cta_Links_Link_Icon_where_and {
   width: Cta_Links_Link_Icon_width_operator
   height: Cta_Links_Link_Icon_height_operator
   id: Cta_Links_Link_Icon_id_operator
+  AND: [Cta_Links_Link_Icon_where_and]
+  OR: [Cta_Links_Link_Icon_where_or]
 }
 
 input Cta_Links_Link_Icon_where_or {
@@ -688,6 +640,8 @@ input Cta_Links_Link_Icon_where_or {
   width: Cta_Links_Link_Icon_width_operator
   height: Cta_Links_Link_Icon_height_operator
   id: Cta_Links_Link_Icon_id_operator
+  AND: [Cta_Links_Link_Icon_where_and]
+  OR: [Cta_Links_Link_Icon_where_or]
 }
 
 type Cta_Links_Link_Reference_Relationship {
@@ -886,6 +840,8 @@ input Content_Columns_Link_Icon_where_and {
   width: Content_Columns_Link_Icon_width_operator
   height: Content_Columns_Link_Icon_height_operator
   id: Content_Columns_Link_Icon_id_operator
+  AND: [Content_Columns_Link_Icon_where_and]
+  OR: [Content_Columns_Link_Icon_where_or]
 }
 
 input Content_Columns_Link_Icon_where_or {
@@ -900,6 +856,8 @@ input Content_Columns_Link_Icon_where_or {
   width: Content_Columns_Link_Icon_width_operator
   height: Content_Columns_Link_Icon_height_operator
   id: Content_Columns_Link_Icon_id_operator
+  AND: [Content_Columns_Link_Icon_where_and]
+  OR: [Content_Columns_Link_Icon_where_or]
 }
 
 type Content_Columns_Link_Reference_Relationship {
@@ -1075,6 +1033,8 @@ input MediaBlock_Media_where_and {
   width: MediaBlock_Media_width_operator
   height: MediaBlock_Media_height_operator
   id: MediaBlock_Media_id_operator
+  AND: [MediaBlock_Media_where_and]
+  OR: [MediaBlock_Media_where_or]
 }
 
 input MediaBlock_Media_where_or {
@@ -1089,6 +1049,8 @@ input MediaBlock_Media_where_or {
   width: MediaBlock_Media_width_operator
   height: MediaBlock_Media_height_operator
   id: MediaBlock_Media_id_operator
+  AND: [MediaBlock_Media_where_and]
+  OR: [MediaBlock_Media_where_or]
 }
 
 type Archive {
@@ -1266,6 +1228,8 @@ input Category_Media_where_and {
   width: Category_Media_width_operator
   height: Category_Media_height_operator
   id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
 }
 
 input Category_Media_where_or {
@@ -1280,6 +1244,8 @@ input Category_Media_where_or {
   width: Category_Media_width_operator
   height: Category_Media_height_operator
   id: Category_Media_id_operator
+  AND: [Category_Media_where_and]
+  OR: [Category_Media_where_or]
 }
 
 type Category_Breadcrumbs {
@@ -1471,6 +1437,8 @@ input Product_Meta_Image_where_and {
   width: Product_Meta_Image_width_operator
   height: Product_Meta_Image_height_operator
   id: Product_Meta_Image_id_operator
+  AND: [Product_Meta_Image_where_and]
+  OR: [Product_Meta_Image_where_or]
 }
 
 input Product_Meta_Image_where_or {
@@ -1485,6 +1453,8 @@ input Product_Meta_Image_where_or {
   width: Product_Meta_Image_width_operator
   height: Product_Meta_Image_height_operator
   id: Product_Meta_Image_id_operator
+  AND: [Product_Meta_Image_where_and]
+  OR: [Product_Meta_Image_where_or]
 }
 
 enum Product__status {
@@ -1651,6 +1621,8 @@ input Page_Meta_Image_where_and {
   width: Page_Meta_Image_width_operator
   height: Page_Meta_Image_height_operator
   id: Page_Meta_Image_id_operator
+  AND: [Page_Meta_Image_where_and]
+  OR: [Page_Meta_Image_where_or]
 }
 
 input Page_Meta_Image_where_or {
@@ -1665,6 +1637,8 @@ input Page_Meta_Image_where_or {
   width: Page_Meta_Image_width_operator
   height: Page_Meta_Image_height_operator
   id: Page_Meta_Image_id_operator
+  AND: [Page_Meta_Image_where_and]
+  OR: [Page_Meta_Image_where_or]
 }
 
 enum Page__status {
@@ -1946,6 +1920,8 @@ input Page_where_and {
   createdAt: Page_createdAt_operator
   _status: Page__status_operator
   id: Page_id_operator
+  AND: [Page_where_and]
+  OR: [Page_where_or]
 }
 
 input Page_where_or {
@@ -1970,6 +1946,8 @@ input Page_where_or {
   createdAt: Page_createdAt_operator
   _status: Page__status_operator
   id: Page_id_operator
+  AND: [Page_where_and]
+  OR: [Page_where_or]
 }
 
 type pagesDocAccess {
@@ -2876,6 +2854,8 @@ input PageVersion_Version_Hero_Links_Link_Icon_where_and {
   width: PageVersion_Version_Hero_Links_Link_Icon_width_operator
   height: PageVersion_Version_Hero_Links_Link_Icon_height_operator
   id: PageVersion_Version_Hero_Links_Link_Icon_id_operator
+  AND: [PageVersion_Version_Hero_Links_Link_Icon_where_and]
+  OR: [PageVersion_Version_Hero_Links_Link_Icon_where_or]
 }
 
 input PageVersion_Version_Hero_Links_Link_Icon_where_or {
@@ -2890,6 +2870,8 @@ input PageVersion_Version_Hero_Links_Link_Icon_where_or {
   width: PageVersion_Version_Hero_Links_Link_Icon_width_operator
   height: PageVersion_Version_Hero_Links_Link_Icon_height_operator
   id: PageVersion_Version_Hero_Links_Link_Icon_id_operator
+  AND: [PageVersion_Version_Hero_Links_Link_Icon_where_and]
+  OR: [PageVersion_Version_Hero_Links_Link_Icon_where_or]
 }
 
 type PageVersion_Version_Hero_Links_Link_Reference_Relationship {
@@ -3051,6 +3033,8 @@ input PageVersion_Version_Hero_Media_where_and {
   width: PageVersion_Version_Hero_Media_width_operator
   height: PageVersion_Version_Hero_Media_height_operator
   id: PageVersion_Version_Hero_Media_id_operator
+  AND: [PageVersion_Version_Hero_Media_where_and]
+  OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
 input PageVersion_Version_Hero_Media_where_or {
@@ -3065,6 +3049,8 @@ input PageVersion_Version_Hero_Media_where_or {
   width: PageVersion_Version_Hero_Media_width_operator
   height: PageVersion_Version_Hero_Media_height_operator
   id: PageVersion_Version_Hero_Media_id_operator
+  AND: [PageVersion_Version_Hero_Media_where_and]
+  OR: [PageVersion_Version_Hero_Media_where_or]
 }
 
 union PageVersion_Version_Layout = Cta | Content | MediaBlock | Archive
@@ -3217,6 +3203,8 @@ input PageVersion_Version_Meta_Image_where_and {
   width: PageVersion_Version_Meta_Image_width_operator
   height: PageVersion_Version_Meta_Image_height_operator
   id: PageVersion_Version_Meta_Image_id_operator
+  AND: [PageVersion_Version_Meta_Image_where_and]
+  OR: [PageVersion_Version_Meta_Image_where_or]
 }
 
 input PageVersion_Version_Meta_Image_where_or {
@@ -3231,6 +3219,8 @@ input PageVersion_Version_Meta_Image_where_or {
   width: PageVersion_Version_Meta_Image_width_operator
   height: PageVersion_Version_Meta_Image_height_operator
   id: PageVersion_Version_Meta_Image_id_operator
+  AND: [PageVersion_Version_Meta_Image_where_and]
+  OR: [PageVersion_Version_Meta_Image_where_or]
 }
 
 enum PageVersion_Version__status {
@@ -3557,6 +3547,8 @@ input versionsPage_where_and {
   updatedAt: versionsPage_updatedAt_operator
   latest: versionsPage_latest_operator
   id: versionsPage_id_operator
+  AND: [versionsPage_where_and]
+  OR: [versionsPage_where_or]
 }
 
 input versionsPage_where_or {
@@ -3585,6 +3577,8 @@ input versionsPage_where_or {
   updatedAt: versionsPage_updatedAt_operator
   latest: versionsPage_latest_operator
   id: versionsPage_id_operator
+  AND: [versionsPage_where_and]
+  OR: [versionsPage_where_or]
 }
 
 type Products {
@@ -3792,6 +3786,8 @@ input Product_where_and {
   createdAt: Product_createdAt_operator
   _status: Product__status_operator
   id: Product_id_operator
+  AND: [Product_where_and]
+  OR: [Product_where_or]
 }
 
 input Product_where_or {
@@ -3811,6 +3807,8 @@ input Product_where_or {
   createdAt: Product_createdAt_operator
   _status: Product__status_operator
   id: Product_id_operator
+  AND: [Product_where_and]
+  OR: [Product_where_or]
 }
 
 type productsDocAccess {
@@ -4513,6 +4511,8 @@ input ProductVersion_Version_Meta_Image_where_and {
   width: ProductVersion_Version_Meta_Image_width_operator
   height: ProductVersion_Version_Meta_Image_height_operator
   id: ProductVersion_Version_Meta_Image_id_operator
+  AND: [ProductVersion_Version_Meta_Image_where_and]
+  OR: [ProductVersion_Version_Meta_Image_where_or]
 }
 
 input ProductVersion_Version_Meta_Image_where_or {
@@ -4527,6 +4527,8 @@ input ProductVersion_Version_Meta_Image_where_or {
   width: ProductVersion_Version_Meta_Image_width_operator
   height: ProductVersion_Version_Meta_Image_height_operator
   id: ProductVersion_Version_Meta_Image_id_operator
+  AND: [ProductVersion_Version_Meta_Image_where_and]
+  OR: [ProductVersion_Version_Meta_Image_where_or]
 }
 
 enum ProductVersion_Version__status {
@@ -4784,6 +4786,8 @@ input versionsProduct_where_and {
   updatedAt: versionsProduct_updatedAt_operator
   latest: versionsProduct_latest_operator
   id: versionsProduct_id_operator
+  AND: [versionsProduct_where_and]
+  OR: [versionsProduct_where_or]
 }
 
 input versionsProduct_where_or {
@@ -4807,6 +4811,8 @@ input versionsProduct_where_or {
   updatedAt: versionsProduct_updatedAt_operator
   latest: versionsProduct_latest_operator
   id: versionsProduct_id_operator
+  AND: [versionsProduct_where_and]
+  OR: [versionsProduct_where_or]
 }
 
 type Order {
@@ -4857,10 +4863,7 @@ type CartItems {
 """
 A field whose value conforms to the standard internet email address format as specified in HTML Spec: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address.
 """
-scalar EmailAddress
-  @specifiedBy(
-    url: "https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address"
-  )
+scalar EmailAddress @specifiedBy(url: "https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address")
 
 type Order_Items {
   product: Product
@@ -5010,6 +5013,8 @@ input Order_where_and {
   updatedAt: Order_updatedAt_operator
   createdAt: Order_createdAt_operator
   id: Order_id_operator
+  AND: [Order_where_and]
+  OR: [Order_where_or]
 }
 
 input Order_where_or {
@@ -5023,6 +5028,8 @@ input Order_where_or {
   updatedAt: Order_updatedAt_operator
   createdAt: Order_createdAt_operator
   id: Order_id_operator
+  AND: [Order_where_and]
+  OR: [Order_where_or]
 }
 
 type ordersDocAccess {
@@ -5456,6 +5463,8 @@ input Media_where_and {
   width: Media_width_operator
   height: Media_height_operator
   id: Media_id_operator
+  AND: [Media_where_and]
+  OR: [Media_where_or]
 }
 
 input Media_where_or {
@@ -5470,6 +5479,8 @@ input Media_where_or {
   width: Media_width_operator
   height: Media_height_operator
   id: Media_id_operator
+  AND: [Media_where_and]
+  OR: [Media_where_or]
 }
 
 type mediaDocAccess {
@@ -5883,6 +5894,8 @@ input Category_where_and {
   updatedAt: Category_updatedAt_operator
   createdAt: Category_createdAt_operator
   id: Category_id_operator
+  AND: [Category_where_and]
+  OR: [Category_where_or]
 }
 
 input Category_where_or {
@@ -5896,6 +5909,8 @@ input Category_where_or {
   updatedAt: Category_updatedAt_operator
   createdAt: Category_createdAt_operator
   id: Category_id_operator
+  AND: [Category_where_and]
+  OR: [Category_where_or]
 }
 
 type categoriesDocAccess {
@@ -6341,6 +6356,8 @@ input User_where_and {
   createdAt: User_createdAt_operator
   email: User_email_operator
   id: User_id_operator
+  AND: [User_where_and]
+  OR: [User_where_or]
 }
 
 input User_where_or {
@@ -6356,6 +6373,8 @@ input User_where_or {
   createdAt: User_createdAt_operator
   email: User_email_operator
   id: User_id_operator
+  AND: [User_where_and]
+  OR: [User_where_or]
 }
 
 type usersDocAccess {
@@ -6887,6 +6906,8 @@ input Redirect_where_and {
   updatedAt: Redirect_updatedAt_operator
   createdAt: Redirect_createdAt_operator
   id: Redirect_id_operator
+  AND: [Redirect_where_and]
+  OR: [Redirect_where_or]
 }
 
 input Redirect_where_or {
@@ -6897,6 +6918,8 @@ input Redirect_where_or {
   updatedAt: Redirect_updatedAt_operator
   createdAt: Redirect_createdAt_operator
   id: Redirect_id_operator
+  AND: [Redirect_where_and]
+  OR: [Redirect_where_or]
 }
 
 type redirectsDocAccess {
@@ -7217,6 +7240,8 @@ input PayloadPreference_where_and {
   updatedAt: PayloadPreference_updatedAt_operator
   createdAt: PayloadPreference_createdAt_operator
   id: PayloadPreference_id_operator
+  AND: [PayloadPreference_where_and]
+  OR: [PayloadPreference_where_or]
 }
 
 input PayloadPreference_where_or {
@@ -7226,6 +7251,8 @@ input PayloadPreference_where_or {
   updatedAt: PayloadPreference_updatedAt_operator
   createdAt: PayloadPreference_createdAt_operator
   id: PayloadPreference_id_operator
+  AND: [PayloadPreference_where_and]
+  OR: [PayloadPreference_where_or]
 }
 
 type payload_preferencesDocAccess {
@@ -7643,6 +7670,8 @@ input Header_NavItems_Link_Icon_where_and {
   width: Header_NavItems_Link_Icon_width_operator
   height: Header_NavItems_Link_Icon_height_operator
   id: Header_NavItems_Link_Icon_id_operator
+  AND: [Header_NavItems_Link_Icon_where_and]
+  OR: [Header_NavItems_Link_Icon_where_or]
 }
 
 input Header_NavItems_Link_Icon_where_or {
@@ -7657,6 +7686,8 @@ input Header_NavItems_Link_Icon_where_or {
   width: Header_NavItems_Link_Icon_width_operator
   height: Header_NavItems_Link_Icon_height_operator
   id: Header_NavItems_Link_Icon_id_operator
+  AND: [Header_NavItems_Link_Icon_where_and]
+  OR: [Header_NavItems_Link_Icon_where_or]
 }
 
 type Header_NavItems_Link_Reference_Relationship {
@@ -8129,6 +8160,8 @@ input Footer_NavItems_Link_Icon_where_and {
   width: Footer_NavItems_Link_Icon_width_operator
   height: Footer_NavItems_Link_Icon_height_operator
   id: Footer_NavItems_Link_Icon_id_operator
+  AND: [Footer_NavItems_Link_Icon_where_and]
+  OR: [Footer_NavItems_Link_Icon_where_or]
 }
 
 input Footer_NavItems_Link_Icon_where_or {
@@ -8143,6 +8176,8 @@ input Footer_NavItems_Link_Icon_where_or {
   width: Footer_NavItems_Link_Icon_width_operator
   height: Footer_NavItems_Link_Icon_height_operator
   id: Footer_NavItems_Link_Icon_id_operator
+  AND: [Footer_NavItems_Link_Icon_where_and]
+  OR: [Footer_NavItems_Link_Icon_where_or]
 }
 
 type Footer_NavItems_Link_Reference_Relationship {
@@ -11963,84 +11998,37 @@ type FooterUpdateAccess {
 
 type Mutation {
   createPage(data: mutationPageInput!, draft: Boolean): Page
-  updatePage(
-    id: String!
-    autosave: Boolean
-    data: mutationPageUpdateInput!
-    draft: Boolean
-  ): Page
+  updatePage(id: String!, autosave: Boolean, data: mutationPageUpdateInput!, draft: Boolean): Page
   deletePage(id: String!): Page
   restoreVersionPage(id: String): Page
   createProduct(data: mutationProductInput!, draft: Boolean): Product
-  updateProduct(
-    id: String!
-    autosave: Boolean
-    data: mutationProductUpdateInput!
-    draft: Boolean
-  ): Product
+  updateProduct(id: String!, autosave: Boolean, data: mutationProductUpdateInput!, draft: Boolean): Product
   deleteProduct(id: String!): Product
   restoreVersionProduct(id: String): Product
   createOrder(data: mutationOrderInput!, draft: Boolean): Order
-  updateOrder(
-    id: String!
-    autosave: Boolean
-    data: mutationOrderUpdateInput!
-    draft: Boolean
-  ): Order
+  updateOrder(id: String!, autosave: Boolean, data: mutationOrderUpdateInput!, draft: Boolean): Order
   deleteOrder(id: String!): Order
   createMedia(data: mutationMediaInput!, draft: Boolean): Media
-  updateMedia(
-    id: String!
-    autosave: Boolean
-    data: mutationMediaUpdateInput!
-    draft: Boolean
-  ): Media
+  updateMedia(id: String!, autosave: Boolean, data: mutationMediaUpdateInput!, draft: Boolean): Media
   deleteMedia(id: String!): Media
   createCategory(data: mutationCategoryInput!, draft: Boolean): Category
-  updateCategory(
-    id: String!
-    autosave: Boolean
-    data: mutationCategoryUpdateInput!
-    draft: Boolean
-  ): Category
+  updateCategory(id: String!, autosave: Boolean, data: mutationCategoryUpdateInput!, draft: Boolean): Category
   deleteCategory(id: String!): Category
   createUser(data: mutationUserInput!, draft: Boolean): User
-  updateUser(
-    id: String!
-    autosave: Boolean
-    data: mutationUserUpdateInput!
-    draft: Boolean
-  ): User
+  updateUser(id: String!, autosave: Boolean, data: mutationUserUpdateInput!, draft: Boolean): User
   deleteUser(id: String!): User
   refreshTokenUser(token: String): usersRefreshedUser
   logoutUser: String
   unlockUser(email: String!): Boolean!
   loginUser(email: String, password: String): usersLoginResult
-  forgotPasswordUser(
-    disableEmail: Boolean
-    email: String!
-    expiration: Int
-  ): Boolean!
+  forgotPasswordUser(disableEmail: Boolean, email: String!, expiration: Int): Boolean!
   resetPasswordUser(password: String, token: String): usersResetPassword
   verifyEmailUser(token: String): Boolean
   createRedirect(data: mutationRedirectInput!, draft: Boolean): Redirect
-  updateRedirect(
-    id: String!
-    autosave: Boolean
-    data: mutationRedirectUpdateInput!
-    draft: Boolean
-  ): Redirect
+  updateRedirect(id: String!, autosave: Boolean, data: mutationRedirectUpdateInput!, draft: Boolean): Redirect
   deleteRedirect(id: String!): Redirect
-  createPayloadPreference(
-    data: mutationPayloadPreferenceInput!
-    draft: Boolean
-  ): PayloadPreference
-  updatePayloadPreference(
-    id: String!
-    autosave: Boolean
-    data: mutationPayloadPreferenceUpdateInput!
-    draft: Boolean
-  ): PayloadPreference
+  createPayloadPreference(data: mutationPayloadPreferenceInput!, draft: Boolean): PayloadPreference
+  updatePayloadPreference(id: String!, autosave: Boolean, data: mutationPayloadPreferenceUpdateInput!, draft: Boolean): PayloadPreference
   deletePayloadPreference(id: String!): PayloadPreference
   updateSettings(data: mutationSettingsInput!, draft: Boolean): Settings
   updateHeader(data: mutationHeaderInput!, draft: Boolean): Header
