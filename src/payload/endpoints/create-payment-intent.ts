@@ -40,6 +40,13 @@ export const createPaymentIntent: PayloadHandler = async (
       const customer = await stripe.customers.create({
         email: fullUser?.email,
         name: fullUser?.name,
+        address: {
+          line1: "510 Townsend St",
+          postal_code: "98140",
+          city: "San Francisco",
+          state: "CA",
+          country: "US",
+        },
       });
 
       stripeCustomerID = customer.id;
@@ -81,11 +88,9 @@ export const createPaymentIntent: PayloadHandler = async (
         });
 
         if (prices.data.length === 0) {
-          res
-            .status(404)
-            .json({
-              error: "There are no items in your cart to checkout with",
-            });
+          res.status(404).json({
+            error: "There are no items in your cart to checkout with",
+          });
           return null;
         }
 
@@ -107,6 +112,7 @@ export const createPaymentIntent: PayloadHandler = async (
       amount: total,
       currency: "usd",
       payment_method_types: ["card"],
+      description: "Tech Product services",
     });
 
     res.send({ client_secret: paymentIntent.client_secret });
