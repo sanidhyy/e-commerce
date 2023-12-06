@@ -62,9 +62,9 @@ export const PaywallBlocks: React.FC<{
         // this is to prevent a flash of the loading shimmer on fast networks
         const end = Date.now();
         if (end - start < 1000) {
-          await new Promise((resolve) =>
-            setTimeout(resolve, 500 - (end - start))
-          );
+          await new Promise((resolve) => {
+            setTimeout(resolve, 500 - (end - start));
+          });
         }
 
         setIsLoading(false);
