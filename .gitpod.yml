@@ -7,5 +7,3 @@
 tasks:
   - init: yarn install
     command: yarn run dev
-
-

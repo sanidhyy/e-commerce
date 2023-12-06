@@ -104,17 +104,6 @@ const AccountForm: React.FC = () => {
       <Message error={error} success={success} className={classes.message} />
       {!changePassword ? (
         <Fragment>
-          <p>
-            {"Change your account details below, or "}
-            <button
-              type="button"
-              className={classes.changePassword}
-              onClick={() => setChangePassword(!changePassword)}
-            >
-              click here
-            </button>
-            {" to change your password."}
-          </p>
           <Input
             name="email"
             label="Email Address"
@@ -129,6 +118,18 @@ const AccountForm: React.FC = () => {
             register={register}
             error={errors.name}
           />
+
+          <p>
+            {"Change your account details below, or "}
+            <button
+              type="button"
+              className={classes.changePassword}
+              onClick={() => setChangePassword(!changePassword)}
+            >
+              click here
+            </button>
+            {" to change your password."}
+          </p>
         </Fragment>
       ) : (
         <Fragment>
