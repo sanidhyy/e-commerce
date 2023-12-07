@@ -1,3 +1,242 @@
+<a name="readme-top"></a>
+
+# Tech Haven - An Open-source E Commerce Store
+
+![Tech Haven - An Open-source E Commerce Store](/.github/images/img_main.png "Tech Haven - An Open-source E Commerce Store")
+
+[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy "Ask Me Anything!")
+[![GitHub license](https://flat.badgen.net/github/license/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/blob/main/LICENSE "GitHub license")
+[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/commits/main "Maintenance")
+[![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/branches "GitHub branches")
+[![Github commits](https://flat.badgen.net/github/commits/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/commits "Github commits")
+[![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://app-taskify.vercel.app/ "Vercel status")
+[![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/issues "GitHub issues")
+[![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/pulls "GitHub pull requests")
+
+<!-- Table of Contents -->
+<details>
+
+<summary>
+
+# :notebook_with_decorative_cover: Table of Contents
+
+</summary>
+
+- [Folder Structure](#bangbang-folder-structure)
+- [Getting Started](#toolbox-getting-started)
+- [Screenshots](#camera-screenshots)
+- [Tech Stack](#gear-tech-stack)
+- [Stats](#wrench-stats)
+- [Contribute](#raised_hands-contribute)
+- [Acknowledgements](#gem-acknowledgements)
+- [Buy Me a Coffee](#coffee-buy-me-a-coffee)
+- [Follow Me](#rocket-follow-me)
+- [Learn More](#books-learn-more)
+- [Deploy on Vercel](#page_with_curl-deploy-on-vercel)
+- [Give A Star](#star-give-a-star)
+- [Star History](#star2-star-history)
+- [Give A Star](#star-give-a-star)
+
+</details>
+
+## :bangbang: Folder Structure
+
+Here is the folder structure of this app.
+
+```bash
+e-commerce/
+  |- public/
+    |-- admin-ui/
+    |-- assets/
+      |--- icons/
+      |--- images/
+  |- src/
+    |-- app/
+      |--- _api/
+      |--- _blocks/
+      |--- _components/
+      |--- _css/
+      |--- _graphql/
+      |--- _heros/
+      |--- _providers/
+      |--- _utilities/
+      |--- (pages)/
+      |--- api/
+      |--- constants/
+      |--- cssVariables.js
+      |--- layout.tsx
+      |--- page.tsx
+    |-- payload/
+      |--- access/
+      |--- blocks/
+      |--- collections/
+      |--- components/
+      |--- endpoints/
+      |--- fields/
+      |--- globals/
+      |--- hooks/
+      |--- seed/
+      |--- stripe/
+      |--- utilities/
+      |--- dotenv.js
+      |--- emptyModuleMock.js
+      |--- payload-types.ts
+      |--- payload-config.ts
+    |-- server.default.ts
+    |-- server.ts
+  |- .env
+  |- .env.example
+  |- .eslintrc.json
+  |- .gitignore
+  |- .prettierignore
+  |- csp.js
+  |- eject.ts
+  |- next.config.js
+  |- nodemon.json
+  |- package.json
+  |- redirects.js
+  |- tsconfig.json
+  |- tsconfig.server.json
+```
+
+<br />
+
+## :toolbox: Getting Started
+
+1. Make sure **Git** and **NodeJS** is installed.
+2. Clone this repository to your local computer.
+3. Create `.env` file in root directory.
+4. Contents of `.env`:
+
+```bash
+# .env
+
+
+# Run on a specific port
+PORT=3000
+
+# Database connection string
+DATABASE_URI=mongodb://127.0.0.1/payload-template-ecommerce
+
+# Used to encrypt JWT tokens
+PAYLOAD_SECRET=YOUR_SECRET_HERE
+
+# Used to format links and URLs
+PAYLOAD_PUBLIC_SERVER_URL=http://localhost:3000
+NEXT_PUBLIC_SERVER_URL=http://localhost:3000
+
+# Enable Stripe integration
+STRIPE_SECRET_KEY=
+PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY=true
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+
+# Enable Stripe webhooks (optional)
+STRIPE_WEBHOOKS_SIGNING_SECRET=
+
+# Allow robots to index the site (optional)
+NEXT_PUBLIC_IS_LIVE=
+
+# Used to preview drafts
+PAYLOAD_PUBLIC_DRAFT_SECRET=demo-draft-secret
+NEXT_PRIVATE_DRAFT_SECRET=demo-draft-secret
+
+# Used to revalidate static pages
+REVALIDATION_KEY=demo-revalation-key
+NEXT_PRIVATE_REVALIDATION_KEY=demo-revalation-key
+
+```
+
+5. **Payload Secret**:
+   - `PAYLOAD_SECRET`, `PAYLOAD_PUBLIC_DRAFT_SECRET`, `NEXT_PRIVATE_DRAFT_SECRET`, `REVALIDATION_KEY` and `NEXT_PRIVATE_REVALIDATION_KEY` are random strings. You can assign them randomly to any sequence of strings or maybe use any online password generator to do so.
+
+6. **Stripe Secret Key**:
+   - `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is provided by Stripe in order to setup online payments. You need to sign up for an account on Stripe (https://stripe.com/), log in, and access these keys in your account dashboard.
+
+![Copy Stripe Secret Key](/.github/images/step_stripe.png "Copy Stripe Secret Key")
+
+7. **URLs for Clerk**:
+
+   - `NEXT_PUBLIC_CLERK_SIGN_IN_URL`, `NEXT_PUBLIC_CLERK_SIGN_UP_URL`, `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`, and `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` are endpoints or URLs related to your Clerk setup. You can configure these in your Clerk dashboard.
+
+8. **MongoDB Database URL**:
+
+   - `DATABASE_URI` is the connection URL for your MongoDB Databse. You can obtain the connection URL from your Payload CMS dashboard.
+
+![Copy Aiven MySQL Database Auth URL](/.github/images/step_aiven.png "Copy Aiven MySQL Database Auth URL")
+
+9. **Public App URL**:
+
+    - `PAYLOAD_PUBLIC_SERVER_URL` and `NEXT_PUBLIC_SERVER_URL` are endpoints or URLs related to this Project. You can configure/copy this as per your needs.
+
+10. Open terminal in root directory. Run npm install or yarn install.
+
+11. Now app is fully configured 👍 and you can start using this app using npm run dev or yarn dev.
+
+### :books: Additional Resources
+
+- Payload Documentation: https://payloadcms.com/docs/
+- Stripe Documentation: https://stripe.com/docs/
+- MongoDB Documentation: https://www.mongodb.com/docs/
+- Express API Documentation: https://expressjs.com/en/5x/api.html
+
+**NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
+
+## :camera: Screenshots:
+
+![Modern UI/UX](/.github/images/img1.png "Modern UI/UX")
+
+![Products Page](/.github/images/img2.png "Products Page")
+
+![View Product Details](/.github/images/img3.png "View Product Details")
+
+![Add to Cart Functionality](/.github/images/img4.png "Add to Cart Functionality")
+
+## :gear: Tech Stack
+
+[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Next JS](https://skillicons.dev/icons?i=next "Next JS")](https://nextjs.org/ "Next JS") [![Typescript](https://skillicons.dev/icons?i=ts "Typescript")](https://www.typescriptlang.org/ "Typescript") [![Vercel](https://skillicons.dev/icons?i=vercel "Vercel")](https://vercel.app/ "Vercel") [![MongoDB](https://skillicons.dev/icons?i=mongodb "MongoDB")](https://tailwindcss.com/ "MongoDB") [![GraphQL](https://skillicons.dev/icons?i=graphql "GraphQL")](https://graphql.org/ "GraphQL")
+
+## :wrench: Stats
+
+[![Stats for Tech Haven](/.github/images/stats.svg "Stats for Tech Haven")](https://pagespeed-insights-svg.glitch.me/?url=https://app-ecommerce.payloadcms.app/ "Stats for Tech Haven")
+
+## :raised_hands: Contribute
+
+You might encounter some bugs while using this app. You are more than welcome to contribute. Just submit changes via pull request and I will review them before merging. Make sure you follow community guidelines.
+
+## :gem: Acknowledgements
+
+Useful resources and libraries that are used in My Portfolio
+
+- [Payload CMS](https://payloadcms.com "Payload CMS")
+- [Bundler Webpack](https://payloadcms.com/docs/admin/webpack "ShadCN UI")
+- [MongoDB](https://payloadcms.com/docs/database/mongodb "MongoDB")
+- [Dotenv](https://github.com/motdotla/dotenv#readme "Dotenv")
+- [Express](https://expressjs.com/ "Express")
+- [Stripe](https://stripe.com/ "Stripe")
+- [QueryString](https://github.com/ljharb/qs#readme "QueryString")
+- [React Router Dom](https://reactrouter.com/ "React Router Dom")
+- [Prettier](https://prettier.io/ "Prettier")
+- [ESLint](https://eslint.org/ "ESLint")
+
+## :coffee: Buy Me a Coffee
+
+[<img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" width="200" />](https://www.buymeacoffee.com/sanidhy "Buy me a Coffee")
+
+## :rocket: Follow Me
+
+[![GitHub followers](https://img.shields.io/github/followers/sanidhyy?style=social&label=Follow&maxAge=2592000)](https://github.com/sanidhyy "Follow Me")
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FTechnicalShubam)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanidhyy%2Fmedical-chat-app "Tweet")
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCNAz_hUVBG2ZUN8TVm0bmYw "Subscribe my Channel")
+
+## :books: Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
 # Payload E-Commerce Template
 
 This is the official [Payload E-Commerce Template](https://github.com/payloadcms/payload/blob/main/templates/ecommerce). Use it to power e-commerce businesses and online stores of all sizes. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
@@ -320,3 +559,21 @@ The easiest way to deploy your project is to use [Payload Cloud](https://payload
 ## Questions
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+
+
+## :star: Give A Star
+
+You can also give this repository a star to show more people and they can use this repository.
+
+## :star2: Star History
+
+<a href="https://star-history.com/#sanidhyy/e-commerce&Timeline">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=sanidhyy/e-commerce&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=sanidhyy/e-commerce&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=sanidhyy/e-commerce&type=Timeline" />
+  </picture>
+</a>
+
+<br />
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
