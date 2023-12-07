@@ -9,7 +9,7 @@
 [![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/commits/main "Maintenance")
 [![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/branches "GitHub branches")
 [![Github commits](https://flat.badgen.net/github/commits/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/commits "Github commits")
-[![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://app-taskify.vercel.app/ "Vercel status")
+[![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://app-ecommerce.payloadcms.app/ "Vercel status")
 [![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/issues "GitHub issues")
 [![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/pulls "GitHub pull requests")
 
