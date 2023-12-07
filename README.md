@@ -162,7 +162,7 @@ NEXT_PRIVATE_REVALIDATION_KEY=demo-revalation-key
 
    - `DATABASE_URI` is the connection URL for your MongoDB Databse. You can obtain the connection URL from your Payload CMS dashboard.
 
-![Copy Aiven MySQL Database Auth URL](/.github/images/step_aiven.png "Copy Aiven MySQL Database Auth URL")
+![Copy MongoDB Database Auth URL](/.github/images/step_mongodb.png "Copy MongoDB Database Auth URL")
 
 9. **Public App URL**:
 
