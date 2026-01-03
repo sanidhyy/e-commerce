@@ -39,7 +39,7 @@
     "next": "14.2.25",
     "payload": "^2.0.7",
     "payload-admin-bar": "^1.0.6",
-    "qs": "6.11.2",
+    "qs": "6.14.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1",
