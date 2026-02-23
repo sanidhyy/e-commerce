@@ -43,14 +43,9 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
-e-commerce/
+@payloadcms/template-ecommerce/
   |- public/
-    |-- admin-ui/
-    |-- assets/
-      |--- icons/
-      |--- images/
   |- src/
     |-- app/
       |--- _api/
@@ -81,25 +76,28 @@ e-commerce/
       |--- utilities/
       |--- dotenv.js
       |--- emptyModuleMock.js
+      |--- generated-schema.graphql
       |--- payload-types.ts
-      |--- payload-config.ts
+      |--- payload.config.ts
     |-- server.default.ts
     |-- server.ts
-  |- .env
   |- .env.example
-  |- .eslintrc.json
+  |- .env/.env.local
+  |- .eslintrc.js
   |- .gitignore
+  |- .gitpod.yml
   |- .prettierignore
   |- csp.js
   |- eject.ts
+  |- next-env.d.ts
   |- next.config.js
   |- nodemon.json
   |- package.json
   |- redirects.js
   |- tsconfig.json
   |- tsconfig.server.json
+  |- yarn.lock
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -208,17 +206,54 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and libraries that are used in My Portfolio
 
 <!--- DEPENDENCIES_START --->
+- [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next): ^13.1.6
+- [@payloadcms/bundler-webpack](https://www.npmjs.com/package/@payloadcms/bundler-webpack): ^1.0.0
+- [@payloadcms/db-mongodb](https://www.npmjs.com/package/@payloadcms/db-mongodb): ^1.0.0
+- [@payloadcms/eslint-config](https://www.npmjs.com/package/@payloadcms/eslint-config): ^0.0.1
+- [@payloadcms/plugin-cloud](https://www.npmjs.com/package/@payloadcms/plugin-cloud): ^2.2.6
+- [@payloadcms/plugin-nested-docs](https://www.npmjs.com/package/@payloadcms/plugin-nested-docs): ^1.0.8
+- [@payloadcms/plugin-redirects](https://www.npmjs.com/package/@payloadcms/plugin-redirects): ^1.0.0
+- [@payloadcms/plugin-seo](https://www.npmjs.com/package/@payloadcms/plugin-seo): ^1.0.10
+- [@payloadcms/plugin-stripe](https://www.npmjs.com/package/@payloadcms/plugin-stripe): ^0.0.14
+- [@payloadcms/richtext-slate](https://www.npmjs.com/package/@payloadcms/richtext-slate): ^1.0.0
+- [@stripe/react-stripe-js](https://www.npmjs.com/package/@stripe/react-stripe-js): ^1.16.3
+- [@stripe/stripe-js](https://www.npmjs.com/package/@stripe/stripe-js): ^1.46.0
+- [@swc/core](https://www.npmjs.com/package/@swc/core): 1.3.76
+- [@types/escape-html](https://www.npmjs.com/package/@types/escape-html): ^1.0.2
+- [@types/express](https://www.npmjs.com/package/@types/express): ^4.17.9
+- [@types/node](https://www.npmjs.com/package/@types/node): 18.11.3
+- [@types/qs](https://www.npmjs.com/package/@types/qs): ^6.9.8
+- [@types/react](https://www.npmjs.com/package/@types/react): 18.0.21
+- [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin): ^5.51.0
+- [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser): ^5.51.0
+- [copyfiles](https://www.npmjs.com/package/copyfiles): ^2.4.1
+- [cross-env](https://www.npmjs.com/package/cross-env): ^7.0.3
+- [dotenv](https://www.npmjs.com/package/dotenv): ^8.2.0
+- [escape-html](https://www.npmjs.com/package/escape-html): ^1.0.3
+- [eslint](https://www.npmjs.com/package/eslint): ^8.19.0
+- [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier): ^8.5.0
+- [eslint-import-resolver-alias](https://www.npmjs.com/package/eslint-import-resolver-alias): ^1.1.2
+- [eslint-plugin-filenames](https://www.npmjs.com/package/eslint-plugin-filenames): ^1.3.2
+- [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import): 2.25.4
+- [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier): ^4.0.0
+- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^4.6.0
+- [eslint-plugin-simple-import-sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort): ^10.0.0
+- [express](https://www.npmjs.com/package/express): ^4.20.0
+- [next](https://www.npmjs.com/package/next): 15.5.10
+- [nodemon](https://www.npmjs.com/package/nodemon): ^2.0.6
+- [payload](https://www.npmjs.com/package/payload): ^2.0.7
+- [payload-admin-bar](https://www.npmjs.com/package/payload-admin-bar): ^1.0.6
+- [prettier](https://www.npmjs.com/package/prettier): ^2.7.1
+- [qs](https://www.npmjs.com/package/qs): 6.14.1
+- [react](https://www.npmjs.com/package/react): ^18.2.0
+- [react-dom](https://www.npmjs.com/package/react-dom): ^18.2.0
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.45.1
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom): 5.3.4
+- [slate](https://www.npmjs.com/package/slate): 0.91.4
+- [stripe](https://www.npmjs.com/package/stripe): ^10.2.0
+- [ts-node](https://www.npmjs.com/package/ts-node): ^10.9.1
+- [typescript](https://www.npmjs.com/package/typescript): ^4.8.4
 
-- [Payload CMS](https://payloadcms.com "Payload CMS")
-- [Bundler Webpack](https://payloadcms.com/docs/admin/webpack "ShadCN UI")
-- [MongoDB](https://payloadcms.com/docs/database/mongodb "MongoDB")
-- [Dotenv](https://github.com/motdotla/dotenv#readme "Dotenv")
-- [Express](https://expressjs.com/ "Express")
-- [Stripe](https://stripe.com/ "Stripe")
-- [QueryString](https://github.com/ljharb/qs#readme "QueryString")
-- [React Router Dom](https://reactrouter.com/ "React Router Dom")
-- [Prettier](https://prettier.io/ "Prettier")
-- [ESLint](https://eslint.org/ "ESLint")
 <!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
