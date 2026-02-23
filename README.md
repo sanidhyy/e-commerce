@@ -9,7 +9,6 @@
 [![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/commits/main "Maintenance")
 [![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/branches "GitHub branches")
 [![Github commits](https://flat.badgen.net/github/commits/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/commits "Github commits")
-[![Vercel status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://app-ecommerce.payloadcms.app/ "Vercel status")
 [![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/issues "GitHub issues")
 [![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/e-commerce?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/e-commerce/pulls "GitHub pull requests")
 
@@ -42,6 +41,8 @@
 ## :bangbang: Folder Structure
 
 Here is the folder structure of this app.
+
+<!--- FOLDER_STRUCTURE_START --->
 
 ```bash
 e-commerce/
@@ -99,6 +100,8 @@ e-commerce/
   |- tsconfig.server.json
 ```
 
+<!--- FOLDER_STRUCTURE_END --->
+
 <br />
 
 ## :toolbox: Getting Started
@@ -155,18 +158,15 @@ NEXT_PRIVATE_REVALIDATION_KEY=demo-revalation-key
 ![Copy Stripe Secret Key](/.github/images/step_stripe.png "Copy Stripe Secret Key")
 
 7. **URLs for Clerk**:
-
    - `NEXT_PUBLIC_CLERK_SIGN_IN_URL`, `NEXT_PUBLIC_CLERK_SIGN_UP_URL`, `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`, and `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` are endpoints or URLs related to your Clerk setup. You can configure these in your Clerk dashboard.
 
 8. **MongoDB Database URL**:
-
    - `DATABASE_URI` is the connection URL for your MongoDB Databse. You can obtain the connection URL from your Payload CMS dashboard.
 
 ![Copy MongoDB Database Auth URL](/.github/images/step_mongodb.png "Copy MongoDB Database Auth URL")
 
 9. **Public App URL**:
-
-    - `PAYLOAD_PUBLIC_SERVER_URL` and `NEXT_PUBLIC_SERVER_URL` are endpoints or URLs related to this Project. You can configure/copy this as per your needs.
+   - `PAYLOAD_PUBLIC_SERVER_URL` and `NEXT_PUBLIC_SERVER_URL` are endpoints or URLs related to this Project. You can configure/copy this as per your needs.
 
 10. Open terminal in root directory. Run npm install or yarn install.
 
@@ -197,7 +197,7 @@ NEXT_PRIVATE_REVALIDATION_KEY=demo-revalation-key
 
 ## :wrench: Stats
 
-[![Stats for Tech Haven](/.github/images/stats.svg "Stats for Tech Haven")](https://pagespeed-insights-svg.glitch.me/?url=https://app-ecommerce.payloadcms.app/ "Stats for Tech Haven")
+[![Stats for Tech Haven](/.github/images/stats.svg "Stats for Tech Haven")](https://pagespeed.web.dev "Stats for Tech Haven")
 
 ## :raised_hands: Contribute
 
@@ -206,6 +206,8 @@ You might encounter some bugs while using this app. You are more than welcome to
 ## :gem: Acknowledgements
 
 Useful resources and libraries that are used in My Portfolio
+
+<!--- DEPENDENCIES_START --->
 
 - [Payload CMS](https://payloadcms.com "Payload CMS")
 - [Bundler Webpack](https://payloadcms.com/docs/admin/webpack "ShadCN UI")
@@ -217,6 +219,7 @@ Useful resources and libraries that are used in My Portfolio
 - [React Router Dom](https://reactrouter.com/ "React Router Dom")
 - [Prettier](https://prettier.io/ "Prettier")
 - [ESLint](https://eslint.org/ "ESLint")
+<!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
 
@@ -383,7 +386,6 @@ Logged-in users can have their shopping carts saved to their profiles as they sh
 Payload itself handles no currency exchange. All payments are processed and billed using [Stripe](https://stripe.com). This means you must have access to a Stripe account via an API key, see [Connect Stripe](#connect-stripe) for how to get one. When you create a product in Payload that you wish to sell, it must be connected to a Stripe product by selecting one from the field in the product's sidebar, see [Products](#products) for more details. Once set, data is automatically synced between the two platforms in the following ways:
 
 1. Stripe to Payload using [Stripe Webhooks](https://stripe.com/docs/webhooks):
-
    - `product.created`
    - `product.updated`
    - `price.updated`
@@ -558,7 +560,6 @@ The easiest way to deploy your project is to use [Payload Cloud](https://payload
 ## Questions
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
-
 
 ## :star: Give A Star
 
