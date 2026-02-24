@@ -85,7 +85,6 @@ Here is the folder structure of this app.
   |- .env/.env.local
   |- .eslintrc.js
   |- .gitignore
-  |- .gitpod.yml
   |- .prettierignore
   |- csp.js
   |- eject.ts
