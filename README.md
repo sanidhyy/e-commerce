@@ -243,7 +243,7 @@ Useful resources and libraries that are used in My Portfolio
 - [payload](https://www.npmjs.com/package/payload): ^3.79.1
 - [payload-admin-bar](https://www.npmjs.com/package/payload-admin-bar): ^1.0.6
 - [prettier](https://www.npmjs.com/package/prettier): ^2.7.1
-- [qs](https://www.npmjs.com/package/qs): 6.14.1
+- [qs](https://www.npmjs.com/package/qs): 6.14.2
 - [react](https://www.npmjs.com/package/react): ^18.2.0
 - [react-dom](https://www.npmjs.com/package/react-dom): ^18.2.0
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.45.1
