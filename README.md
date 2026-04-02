@@ -240,7 +240,7 @@ Useful resources and libraries that are used in My Portfolio
 - [express](https://www.npmjs.com/package/express): ^4.20.0
 - [next](https://www.npmjs.com/package/next): 15.5.10
 - [nodemon](https://www.npmjs.com/package/nodemon): ^2.0.6
-- [payload](https://www.npmjs.com/package/payload): ^2.0.7
+- [payload](https://www.npmjs.com/package/payload): ^3.79.1
 - [payload-admin-bar](https://www.npmjs.com/package/payload-admin-bar): ^1.0.6
 - [prettier](https://www.npmjs.com/package/prettier): ^2.7.1
 - [qs](https://www.npmjs.com/package/qs): 6.14.1
