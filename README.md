@@ -238,7 +238,7 @@ Useful resources and libraries that are used in My Portfolio
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^4.6.0
 - [eslint-plugin-simple-import-sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort): ^10.0.0
 - [express](https://www.npmjs.com/package/express): ^4.20.0
-- [next](https://www.npmjs.com/package/next): 15.5.10
+- [next](https://www.npmjs.com/package/next): 15.5.14
 - [nodemon](https://www.npmjs.com/package/nodemon): ^2.0.6
 - [payload](https://www.npmjs.com/package/payload): ^3.79.1
 - [payload-admin-bar](https://www.npmjs.com/package/payload-admin-bar): ^1.0.6
