@@ -213,7 +213,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and libraries that are used in My Portfolio
 
 <!--- DEPENDENCIES_START --->
-- [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next): ^13.1.6
+- [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next): ^16.4.6
 - [@payloadcms/bundler-webpack](https://www.npmjs.com/package/@payloadcms/bundler-webpack): ^1.0.0
 - [@payloadcms/db-mongodb](https://www.npmjs.com/package/@payloadcms/db-mongodb): ^1.0.0
 - [@payloadcms/eslint-config](https://www.npmjs.com/package/@payloadcms/eslint-config): ^0.0.1
@@ -229,7 +229,7 @@ Useful resources and libraries that are used in My Portfolio
 - [@types/escape-html](https://www.npmjs.com/package/@types/escape-html): ^1.0.2
 - [@types/express](https://www.npmjs.com/package/@types/express): ^4.17.9
 - [@types/node](https://www.npmjs.com/package/@types/node): 18.11.3
-- [@types/qs](https://www.npmjs.com/package/@types/qs): ^6.9.8
+- [@types/qs](https://www.npmjs.com/package/@types/qs): ^6.15.1
 - [@types/react](https://www.npmjs.com/package/@types/react): 18.0.21
 - [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin): ^5.51.0
 - [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser): ^5.51.0
@@ -246,17 +246,17 @@ Useful resources and libraries that are used in My Portfolio
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ^4.6.0
 - [eslint-plugin-simple-import-sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort): ^10.0.0
 - [express](https://www.npmjs.com/package/express): ^4.20.0
-- [next](https://www.npmjs.com/package/next): 15.5.24
-- [nodemon](https://www.npmjs.com/package/nodemon): ^2.0.6
+- [next](https://www.npmjs.com/package/next): 16.4.6
+- [nodemon](https://www.npmjs.com/package/nodemon): ^3.1.14
 - [payload](https://www.npmjs.com/package/payload): ^3.79.1
 - [payload-admin-bar](https://www.npmjs.com/package/payload-admin-bar): ^1.0.6
 - [prettier](https://www.npmjs.com/package/prettier): ^2.7.1
-- [qs](https://www.npmjs.com/package/qs): 6.16.0
+- [qs](https://www.npmjs.com/package/qs): 6.17.1
 - [react](https://www.npmjs.com/package/react): ^18.2.0
 - [react-dom](https://www.npmjs.com/package/react-dom): ^18.2.0
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.45.1
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom): 5.3.4
-- [slate](https://www.npmjs.com/package/slate): 0.91.4
+- [slate](https://www.npmjs.com/package/slate): 0.147.4
 - [stripe](https://www.npmjs.com/package/stripe): ^10.2.0
 - [ts-node](https://www.npmjs.com/package/ts-node): ^10.9.1
 - [typescript](https://www.npmjs.com/package/typescript): ^4.8.4
